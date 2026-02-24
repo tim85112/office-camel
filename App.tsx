@@ -12,7 +12,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-brand-red selection:text-white">
-      <Navbar />
+      <Navbar onNavigate={setCurrentPage} />
       <main>
         {currentPage === 'home' ? (
           <>

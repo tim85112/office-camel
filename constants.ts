@@ -27,13 +27,13 @@ export const PARTNERS = [
 export const COMPARISON_DATA = [
   {
     feature: "餐點價格",
-    traditional: "溢價 (比店內貴)",
+    traditional: "遠高於店內價",
     beast: "店內價 (省荷包)",
     icon: DollarSign,
   },
   {
     feature: "運費門檻",
-    traditional: "需湊單或付運費",
+    traditional: "平台費＋運費",
     beast: "1人即免運",
     icon: Truck,
   },
@@ -54,17 +54,17 @@ export const COMPARISON_DATA = [
 export const B_SIDE_BENEFITS = [
   {
     title: "預約制產能優化",
-    description: "不壓縮現場客量，產能利用最大化。提前接單，從容備餐。",
+    description: "不壓縮現場客量，產能利用最大化。\n提前接單，從容備餐。",
     icon: Clock,
   },
   {
     title: "單筆大宗穩單",
-    description: "一單即數十份，大幅提升出餐效率。不再為了一碗麵跑一趟。",
+    description: "一單即數十份，大幅提升出餐效率。\n不再為了一碗麵跑一趟。",
     icon: Box,
   },
   {
     title: "免抽成與三費",
-    description: "免上架費、免月租、免機器費。用 Line 即可接單，利潤回歸店家。",
+    description: "免上架費、免月租、免機器費。\n用 Line 即可接單，利潤回歸店家。",
     icon: DollarSign,
   },
   {

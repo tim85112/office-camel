@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
             </span>
             台中商辦午餐救星
           </div>
-          
+
           <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
             用<span className="text-brand-red relative whitespace-nowrap">
               <span className="relative z-10">「店內價」</span>
@@ -26,16 +26,16 @@ const Hero: React.FC = () => {
             </span>吃午餐，<br />
             剩下的錢拿來買咖啡。
           </h1>
-          
+
           <p className="mt-4 text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-            不需揪團訂餐、不再找零錢。專為商辦精英設計的訂餐平台。<br className="hidden md:block"/>
-            一人就能點，免運費直送大樓一樓。
+            不需揪團訂餐、不再找零錢。\n專為商辦精英設計的訂餐平台。<br className="hidden md:block" />
+            \n一人就能點，免運費直送大樓一樓。
           </p>
-          
+
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-            <a 
+            <a
               href={LINKS.consumerLine}
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-center bg-brand-red text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg hover:bg-red-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
             >
@@ -43,10 +43,10 @@ const Hero: React.FC = () => {
               我是員工 (立即點餐)
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            
-            <a 
+
+            <a
               href={LINKS.restaurantLine}
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center justify-center bg-white text-gray-800 border-2 border-gray-200 px-8 py-4 rounded-xl text-lg font-bold hover:border-brand-red hover:text-brand-red hover:-translate-y-1 transition-all duration-200"
             >
@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
               我是餐廳 (申請合作)
             </a>
           </div>
-          
+
           <div className="mt-12 flex items-center justify-center space-x-6 text-sm text-gray-500">
             <div className="flex items-center">
               <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>

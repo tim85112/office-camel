@@ -92,7 +92,7 @@ const HowItWorks: React.FC = () => {
             <div className="text-center mb-12">
               <span className="text-brand-red font-bold tracking-wider uppercase text-sm">For Partners</span>
               <h3 className="text-3xl font-bold text-gray-900 mt-2">我們是你最忠誠的「商辦駝獸」</h3>
-              <p className="text-gray-600 mt-4 max-w-2xl mx-auto">幫你把美食送進商辦心臟\n解決外送平台高抽成與運送痛點。</p>
+              <p className="text-gray-600 mt-4 max-w-2xl mx-auto">幫你把美食送進商辦心臟<br />解決外送平台高抽成與運送痛點。</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -102,7 +102,7 @@ const HowItWorks: React.FC = () => {
                     <benefit.icon className="w-6 h-6 text-brand-dark" />
                   </div>
                   <h4 className="text-lg font-bold text-gray-900 mb-2">{benefit.title}</h4>
-                  <p className="text-sm text-gray-600 leading-relaxed">{benefit.description}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">{benefit.description}</p>
                 </div>
               ))}
             </div>

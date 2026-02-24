@@ -8,7 +8,7 @@ const Comparison: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">為什麼選擇【商辦駝獸】？</h2>
-          <p className="text-lg text-gray-600">別再忍受昂貴的外送費與漫長的等待\n讓我們重新定義辦公室午餐！</p>
+          <p className="text-lg text-gray-600">別再忍受昂貴的外送費與漫長的等待<br />讓我們重新定義辦公室午餐！</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">

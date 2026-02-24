@@ -28,8 +28,8 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="mt-4 text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-            不需揪團訂餐、不再找零錢。\n專為商辦精英設計的訂餐平台。<br className="hidden md:block" />
-            \n一人就能點，免運費直送大樓一樓。
+            不需揪團訂餐、不再找零錢。<br />專為商辦精英設計的訂餐平台。<br className="hidden md:block" />
+            <br />一人就能點，免運費直送大樓一樓。
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">

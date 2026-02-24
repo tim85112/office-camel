@@ -6,13 +6,12 @@ interface BuildingSelectionProps {
     onBack: () => void;
 }
 
-type District = '市政中心' | '台灣大道' | '捷運文心' | '中科經貿';
+type District = '市政中心' | '台灣大道' | '捷運文心';
 
 const DISTRICTS: { id: District; name: string; desc: string }[] = [
     { id: '市政中心', name: '【七期市政中心】', desc: '西屯/南屯核心' },
     { id: '台灣大道', name: '【台灣大道廊道】', desc: '西區/北區金融區' },
-    { id: '捷運文心', name: '【捷運文心軸線】', desc: '北屯/南屯發展區' },
-    { id: '中科經貿', name: '【中科經貿園區】', desc: '水湳/西屯產業區' }
+    { id: '捷運文心', name: '【捷運文心軸線】', desc: '北屯/南屯發展區' }
 ];
 
 interface Building {
@@ -43,12 +42,6 @@ const BUILDINGS: Record<District, Building[]> = {
         { name: '生產力大樓', status: 'developing' },
         { name: '龍觀天下', status: 'developing' },
         { name: '宏全世界廣場', status: 'developing' },
-        { name: '普林斯頓', status: 'developing' },
-    ],
-    '中科經貿': [
-        { name: '中科時代', status: 'developing' },
-        { name: '科管局', status: 'developing' },
-        { name: '水湳經貿', status: 'developing' },
     ]
 };
 
@@ -82,14 +75,14 @@ const BuildingSelection: React.FC<BuildingSelectionProps> = ({ onBack }) => {
                 </div>
 
                 {/* Step 1: Select District */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
                     {DISTRICTS.map((district) => (
                         <button
                             key={district.id}
                             onClick={() => setSelectedDistrict(district.id)}
                             className={`p-6 rounded-2xl border-2 text-left transition-all duration-300 flex items-center ${selectedDistrict === district.id
-                                    ? 'border-brand-red bg-white shadow-lg transform -translate-y-1'
-                                    : 'border-white bg-white/60 hover:border-brand-red/30 hover:bg-white text-gray-500'
+                                ? 'border-brand-red bg-white shadow-lg transform -translate-y-1'
+                                : 'border-white bg-white/60 hover:border-brand-red/30 hover:bg-white text-gray-500'
                                 }`}
                         >
                             <div className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 ${selectedDistrict === district.id ? 'bg-brand-red/10 text-brand-red' : 'bg-gray-100 text-gray-400'
@@ -120,8 +113,8 @@ const BuildingSelection: React.FC<BuildingSelectionProps> = ({ onBack }) => {
                                     key={idx}
                                     onClick={() => handleBuildingClick(building)}
                                     className={`relative p-5 rounded-xl border-2 text-left flex justify-between items-center transition-all ${building.status === 'opened'
-                                            ? 'border-brand-red bg-brand-red/5 hover:bg-brand-red/10 group'
-                                            : 'border-gray-100 bg-gray-50 opacity-70 hover:opacity-100 hover:border-gray-300'
+                                        ? 'border-brand-red bg-brand-red/5 hover:bg-brand-red/10 group'
+                                        : 'border-gray-100 bg-gray-50 opacity-70 hover:opacity-100 hover:border-gray-300'
                                         }`}
                                 >
                                     <div>

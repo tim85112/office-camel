@@ -2,12 +2,16 @@ import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { CONTACT, LINKS } from '../constants';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  onNavigate: (page: 'home' | 'buildingSelection') => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
-          
+
           {/* Brand Info */}
           <div>
             <div className="flex items-center mb-4">
@@ -15,7 +19,7 @@ const Footer: React.FC = () => {
               <span className="ml-2 text-xs bg-brand-red px-2 py-0.5 rounded text-white font-medium">Office Camel</span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              專注於商辦大樓的午餐合單平台。<br/>
+              專注於商辦大樓的午餐合單平台。<br />
               我們相信，吃得好、省得多，工作效率會更好。
             </p>
           </div>
@@ -25,9 +29,12 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-bold mb-6 text-brand-beige">快速連結</h4>
             <ul className="space-y-3">
               <li>
-                <a href={LINKS.consumerLine} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <button
+                  onClick={() => onNavigate('buildingSelection')}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   商辦員工訂餐 (Line)
-                </a>
+                </button>
               </li>
               <li>
                 <a href={LINKS.restaurantLine} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white transition-colors">
@@ -75,7 +82,7 @@ const Footer: React.FC = () => {
 };
 
 const UserIcon = ({ className }: { className?: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
 )
 
 export default Footer;

@@ -20,7 +20,7 @@ const App: React.FC = () => {
             <Comparison />
             <HowItWorks onNavigate={setCurrentPage} />
             <Partners />
-            <Footer />
+            <Footer onNavigate={setCurrentPage} />
           </>
         ) : (
           <BuildingSelection onBack={() => setCurrentPage('home')} />

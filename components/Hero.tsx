@@ -2,7 +2,11 @@ import React from 'react';
 import { ArrowRight, Coffee, Building2 } from 'lucide-react';
 import { LINKS } from '../constants';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onNavigate: (page: 'home' | 'buildingSelection') => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   return (
     <section id="hero" className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-brand-beige/30">
       {/* Background decoration */}
@@ -33,16 +37,14 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-            <a
-              href={LINKS.consumerLine}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => onNavigate('buildingSelection')}
               className="group flex items-center justify-center bg-brand-red text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg hover:bg-red-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
             >
               <Coffee className="mr-2 w-5 h-5" />
               我是員工 (立即點餐)
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </button>
 
             <a
               href={LINKS.restaurantLine}

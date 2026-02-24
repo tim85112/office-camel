@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { User, Smartphone, MapPin, ClipboardList, Package, Truck, ArrowRight } from 'lucide-react';
 import { B_SIDE_BENEFITS, LINKS } from '../constants';
 
-const HowItWorks: React.FC = () => {
+interface HowItWorksProps {
+  onNavigate: (page: 'home' | 'buildingSelection') => void;
+}
+
+const HowItWorks: React.FC<HowItWorksProps> = ({ onNavigate }) => {
   const [role, setRole] = useState<'consumer' | 'restaurant'>('consumer');
 
   return (
@@ -123,15 +127,13 @@ const HowItWorks: React.FC = () => {
 
         {role === 'consumer' && (
           <div className="mt-12 text-center">
-            <a
-              href={LINKS.consumerLine}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => onNavigate('buildingSelection')}
               className="inline-flex items-center bg-brand-red text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition-all shadow-lg"
             >
               立即加入點餐
               <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
+            </button>
           </div>
         )}
 

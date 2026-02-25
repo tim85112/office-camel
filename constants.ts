@@ -5,10 +5,16 @@ export const LINKS = {
   restaurantLine: "https://lin.ee/W9liNZZ",
 };
 
-export const CONTACT = {
-  name: "Ivan Lee",
-  phone: "0938-089609",
-};
+export const CONTACTS = [
+  {
+    name: "Ivan Lee",
+    phone: "0938-089609",
+  },
+  {
+    name: "Chiu",
+    phone: "0978-521989",
+  }
+];
 
 export const PARTNERS = [
   { name: "蛋白盒子", logo: "https://i.postimg.cc/7hdPcySP/dan-bai-he-zilogo.png" },

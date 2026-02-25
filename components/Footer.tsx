@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { CONTACT, LINKS } from '../constants';
+import { CONTACTS, LINKS } from '../constants';
 
 interface FooterProps {
   onNavigate: (page: 'home' | 'buildingSelection') => void;
@@ -47,24 +47,28 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Contact */}
           <div>
             <h4 className="text-lg font-bold mb-6 text-brand-beige">聯繫我們</h4>
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <UserIcon className="w-5 h-5 text-brand-red mr-3 mt-1" />
-                <div>
-                  <p className="text-sm text-gray-500">合作聯繫專員</p>
-                  <p className="text-white font-medium">{CONTACT.name}</p>
+            <div className="space-y-6">
+              {CONTACTS.map((contact, index) => (
+                <div key={index} className="space-y-4">
+                  <div className="flex items-start">
+                    <UserIcon className="w-5 h-5 text-brand-red mr-3 mt-1" />
+                    <div>
+                      <p className="text-sm text-gray-500">合作聯繫專員</p>
+                      <p className="text-white font-medium">{contact.name}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <Phone className="w-5 h-5 text-brand-red mr-3" />
+                    <a href={`tel:${contact.phone.replace('-', '')}`} className="text-white hover:text-brand-yellow transition-colors">
+                      {contact.phone}
+                    </a>
+                  </div>
+                  <div className="flex items-center">
+                    <MapPin className="w-5 h-5 text-brand-red mr-3" />
+                    <span className="text-gray-400">台中市</span>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center">
-                <Phone className="w-5 h-5 text-brand-red mr-3" />
-                <a href={`tel:${CONTACT.phone.replace('-', '')}`} className="text-white hover:text-brand-yellow transition-colors">
-                  {CONTACT.phone}
-                </a>
-              </div>
-              <div className="flex items-center">
-                <MapPin className="w-5 h-5 text-brand-red mr-3" />
-                <span className="text-gray-400">台中市</span>
-              </div>
+              ))}
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, MessageCircle } from 'lucide-react';
 import { CONTACTS, LINKS } from '../constants';
 
 interface FooterProps {
@@ -47,7 +47,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Contact */}
           <div>
             <h4 className="text-lg font-bold mb-6 text-brand-beige">聯繫我們</h4>
-            <div className="space-y-6">
+            <div className="flex flex-col sm:flex-row gap-8">
               {CONTACTS.map((contact, index) => (
                 <div key={index} className="space-y-4">
                   <div className="flex items-start">
@@ -63,10 +63,14 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                       {contact.phone}
                     </a>
                   </div>
-                  <div className="flex items-center">
-                    <MapPin className="w-5 h-5 text-brand-red mr-3" />
-                    <span className="text-gray-400">台中市</span>
-                  </div>
+                  {contact.line && (
+                    <div className="flex items-center">
+                      <MessageCircle className="w-5 h-5 text-[#06C755] mr-3" />
+                      <a href={contact.line} target="_blank" rel="noreferrer" className="text-white hover:text-brand-yellow transition-colors">
+                        加 LINE 好友
+                      </a>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

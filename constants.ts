@@ -9,10 +9,12 @@ export const CONTACTS = [
   {
     name: "Ivan Lee",
     phone: "0938-089609",
+    line: "https://line.me/ti/p/DyoGGgwKTv"
   },
   {
     name: "Chiu",
     phone: "0978-521989",
+    line: "https://line.me/ti/p/UInmpX-4TS"
   }
 ];
 

@@ -71,7 +71,7 @@ export const B_SIDE_BENEFITS = [
     icon: Box,
   },
   {
-    title: "免抽成與三費",
+    title: "免三費",
     description: "免上架費、免月租、免機器費。\n用 Line 即可接單，利潤回歸店家。",
     icon: DollarSign,
   },

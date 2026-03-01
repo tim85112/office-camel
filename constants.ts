@@ -48,7 +48,7 @@ export const COMPARISON_DATA = [
   {
     feature: "配送品質",
     traditional: "外送員隨機、易冷掉",
-    beast: "專員保溫袋、準時達",
+    beast: "高等保溫箱、準時抵達！",
     icon: ShieldCheck,
   },
   {

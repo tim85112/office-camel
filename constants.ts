@@ -7,6 +7,11 @@ export const LINKS = {
 
 export const CONTACTS = [
   {
+    name: "Hsieh David",
+    phone: "0916-366130",
+    line: "https://line.me/ti/p/TqP-CgZSVt"
+  },
+  {
     name: "Ivan Lee",
     phone: "0938-089609",
     line: "https://line.me/ti/p/DyoGGgwKTv"

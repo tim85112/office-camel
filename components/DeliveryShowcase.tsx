@@ -21,7 +21,7 @@ const DeliveryShowcase: React.FC = () => {
             <div className="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
               <span className="inline-block px-3 py-1 bg-brand-red text-xs font-bold rounded-full mb-3 shadow-md">專業保溫</span>
               <h3 className="text-2xl md:text-3xl font-bold mb-3">EPP 高級保溫箱</h3>
-              <p className="text-white/90 leading-relaxed max-w-sm">高效鎖溫抗震設計，完美抵抗外部氣溫變化，讓每一餐都像剛出爐般熱騰騰。</p>
+              <p className="text-white/90 leading-relaxed max-w-sm">高效鎖溫抗震設計，完美抵抗外部氣溫變化<br />讓每一餐都像剛出爐般熱騰騰。</p>
             </div>
           </div>
 
@@ -52,7 +52,7 @@ const DeliveryShowcase: React.FC = () => {
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                 <span className="inline-block px-3 py-1 bg-brand-red text-xs font-bold rounded-full mb-3 shadow-md">快速取餐</span>
                 <h3 className="text-xl md:text-2xl font-bold mb-2">大樓專屬發餐點</h3>
-                <p className="text-white/90 text-sm md:text-base">12:00準時抵達指定取餐處，憑取餐碼秒速領取，免吹風淋雨下樓找外送員，午休時間全歸你。</p>
+                <p className="text-white/90 text-sm md:text-base">12:00準時抵達指定取餐處，憑取餐碼秒速領取，午休時間全歸你。</p>
               </div>
             </div>
           </div>

@@ -30,6 +30,9 @@ export const PARTNERS = [
   { name: "三分味牛肉麵", logo: "https://lurl.cc/k41bm" },
   { name: "發居齋素食", logo: "https://lurl.cc/k41bm" },
   { name: "一粒麥子陳傳盛爌肉飯", logo: "https://lurl.cc/k41bm" },
+  { name: "TEA'S原味", logo: "https://i.meee.com.tw/FhvLgV7.png" },
+  { name: "OKKO義式小館", logo: "https://i.meee.com.tw/OdtFwif.png" },
+
 ];
 
 export const COMPARISON_DATA = [

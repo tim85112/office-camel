@@ -17,17 +17,20 @@ const Partners: React.FC = () => {
               className="group flex flex-col items-center justify-center p-4 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg border border-gray-100 hover:border-brand-yellow transition-all duration-300 h-32"
             >
               <div className="w-full h-16 flex items-center justify-center mb-2 overflow-hidden">
-                 {/* Using object-contain to ensure logos fit nicely without distortion */}
-                <img 
-                  src={partner.logo} 
-                  alt={`${partner.name} logo`} 
-                  className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    target.parentElement!.innerHTML = `<span class="text-sm font-bold text-gray-400 group-hover:text-brand-red">${partner.name}</span>`;
-                  }}
-                />
+                 {partner.logo ? (
+                   <img 
+                     src={partner.logo} 
+                     alt={`${partner.name} logo`} 
+                     className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
+                     onError={(e) => {
+                       const target = e.target as HTMLImageElement;
+                       target.style.display = 'none';
+                       target.parentElement!.innerHTML = `<span class="text-sm font-bold text-gray-400 group-hover:text-brand-red">${partner.name}</span>`;
+                     }}
+                   />
+                 ) : (
+                   <span className="text-sm font-bold text-gray-400 group-hover:text-brand-red">{partner.name}</span>
+                 )}
               </div>
               <span className="text-xs font-medium text-gray-400 group-hover:text-gray-900 opacity-0 group-hover:opacity-100 transition-opacity">
                 {partner.name}

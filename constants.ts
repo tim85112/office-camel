@@ -25,13 +25,15 @@ export const PARTNERS = [
   { name: "清序智茶", logo: "https://i.postimg.cc/T1pYCPLJ/can-ting-LOGO.jpg" },
   { name: "丰樂食堂", logo: "https://i.postimg.cc/yd6N3jV9/can-ting-LOGO.png" },
   { name: "湘春家", logo: "https://i.postimg.cc/yxt65z0X/2.png" },
-  { name: "無限好油飯", logo: "https://lurl.cc/k41bm" },
   { name: "8私廚小餐館", logo: "https://i.meee.com.tw/DhtkRLX.png" },
-  { name: "三分味牛肉麵", logo: "https://lurl.cc/k41bm" },
-  { name: "發居齋素食", logo: "https://lurl.cc/k41bm" },
-  { name: "一粒麥子陳傳盛爌肉飯", logo: "https://lurl.cc/k41bm" },
   { name: "TEA'S原味", logo: "https://i.meee.com.tw/FhvLgV7.png" },
   { name: "OKKO義式小館", logo: "https://i.meee.com.tw/OdtFwif.png" },
+  { name: "三分味牛肉麵" },
+  { name: "無限好油飯" },
+  { name: "發居齋素食" },
+  { name: "一粒麥子陳傳盛爌肉飯" },
+  { name: "意品香佛跳牆" },
+  { name: "糊塗麵" },
 
 ];
 

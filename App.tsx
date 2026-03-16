@@ -6,6 +6,7 @@ import HowItWorks from './components/HowItWorks';
 import Partners from './components/Partners';
 import Footer from './components/Footer';
 import BuildingSelection from './components/BuildingSelection';
+import DeliveryShowcase from './components/DeliveryShowcase';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<'home' | 'buildingSelection'>('home');
@@ -19,6 +20,7 @@ const App: React.FC = () => {
             <Hero onNavigate={setCurrentPage} />
             <Comparison />
             <HowItWorks onNavigate={setCurrentPage} />
+            <DeliveryShowcase />
             <Partners />
             <Footer onNavigate={setCurrentPage} />
           </>

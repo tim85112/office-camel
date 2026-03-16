@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Coffee, Building2 } from 'lucide-react';
+import { ArrowRight, Coffee, Building2, Truck } from 'lucide-react';
 import { LINKS } from '../constants';
 
 interface HeroProps {
@@ -36,7 +36,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             <br />一人就能點，免運費直送大樓一樓。
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-6">
             <button
               onClick={() => onNavigate('buildingSelection')}
               className="group flex items-center justify-center bg-brand-red text-white px-8 py-4 rounded-xl text-lg font-bold shadow-lg hover:bg-red-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
@@ -54,6 +54,16 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             >
               <Building2 className="mr-2 w-5 h-5" />
               我是餐廳 (申請合作)
+            </a>
+
+            <a
+              href="https://lin.ee/MrkTwKS"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center bg-white text-gray-800 border-2 border-gray-200 px-8 py-4 rounded-xl text-lg font-bold hover:border-brand-red hover:text-brand-red hover:-translate-y-1 transition-all duration-200"
+            >
+              <Truck className="mr-2 w-5 h-5" />
+              我想加入(物流合作)
             </a>
           </div>
 

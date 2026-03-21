@@ -24,6 +24,9 @@ export const CONTACTS = [
 ];
 
 export const PARTNERS = [
+  { name: "WAYMAKER COFFEE", logo: "https://i.meee.com.tw/zB1l6RF.jpg" },
+  { name: "九菜盒子", logo: "https://i.meee.com.tw/5DgkJl5.jpg" },
+  { name: "隨主飡法式水煮", logo: "https://i.meee.com.tw/EiDvXFZ.jpg" },
   { name: "蛋白盒子", logo: "https://i.postimg.cc/7hdPcySP/dan-bai-he-zilogo.png" },
   { name: "食見生活", logo: "https://i.postimg.cc/sxvDw2G3/can-ting-LOGO.png" },
   { name: "迷客夏", logo: "https://i.postimg.cc/kMQmPK9Y/LOGO.jpg" },

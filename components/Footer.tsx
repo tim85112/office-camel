@@ -56,9 +56,9 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Contact */}
           <div>
             <h4 className="text-lg font-bold mb-6 text-brand-beige">聯繫我們</h4>
-            <div className="flex flex-col sm:flex-row gap-8">
+            <div className="flex flex-col gap-6">
               {CONTACTS.map((contact, index) => (
-                <div key={index} className="space-y-4">
+                <div key={index} className="min-w-0 space-y-2">
                   <div className="flex items-start">
                     <UserIcon className="w-5 h-5 text-brand-red mr-3 mt-1" />
                     <div>

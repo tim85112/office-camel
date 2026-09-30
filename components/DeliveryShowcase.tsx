@@ -13,7 +13,11 @@ const DeliveryShowcase: React.FC = () => {
           {/* EPP高級保溫箱 - Vertical image */}
           <div className="md:col-span-5 relative group overflow-hidden rounded-2xl shadow-lg h-[400px] md:h-[600px]">
             <img 
-              src="https://i.meee.com.tw/hoVCCG2.jpg" 
+              src="/showcase/insulated-box.webp"
+              width="760"
+              height="1200"
+              loading="lazy"
+              decoding="async" 
               alt="EPP高級保溫箱" 
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
             />
@@ -29,7 +33,11 @@ const DeliveryShowcase: React.FC = () => {
             {/* 專用保溫袋 - Horizontal image */}
             <div className="relative group overflow-hidden rounded-2xl shadow-lg h-[250px] md:h-[288px]">
               <img 
-                src="https://i.meee.com.tw/78vIUQa.jpg" 
+                src="/showcase/thermal-bag.webp"
+              width="1000"
+              height="620"
+              loading="lazy"
+              decoding="async" 
                 alt="專用保溫袋" 
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
@@ -44,7 +52,11 @@ const DeliveryShowcase: React.FC = () => {
             {/* 發餐現場 - Horizontal image */}
             <div className="relative group overflow-hidden rounded-2xl shadow-lg h-[250px] md:h-[288px] flex-grow">
               <img 
-                src="https://i.meee.com.tw/NgNsJ17.jpg" 
+                src="/showcase/pickup-lobby.webp"
+              width="1000"
+              height="620"
+              loading="lazy"
+              decoding="async" 
                 alt="一樓發餐現場" 
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />

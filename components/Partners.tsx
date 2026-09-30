@@ -21,6 +21,8 @@ const Partners: React.FC = () => {
                    <img
                      src={partner.logo}
                      alt={`${partner.name} logo`}
+                     loading="lazy"
+                     decoding="async"
                      className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
                      onError={(e) => {
                        const target = e.target as HTMLImageElement;

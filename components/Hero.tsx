@@ -36,7 +36,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               台中商辦午餐救星
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
               用<span className="text-brand-red relative whitespace-nowrap">
                 <span className="relative z-10">「店內價」</span>
                 <span className="absolute bottom-2 left-0 w-full h-3 bg-brand-yellow/60 -z-10 transform -rotate-2"></span>
@@ -99,7 +99,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
         {/* Proof strip */}
         <dl className="mt-12 grid grid-cols-1 sm:grid-cols-3 rounded-2xl bg-white shadow-lg ring-1 ring-black/5 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
           {STATS.map((stat) => (
-            <div key={stat.label} className="px-6 py-6 text-center">
+            <div key={stat.label} className="px-6 py-5 sm:py-6 text-center">
               <dt className="text-3xl font-extrabold text-brand-red">{stat.value}</dt>
               <dd className="mt-1 text-sm text-gray-600">{stat.label}</dd>
             </div>

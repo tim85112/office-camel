@@ -13,6 +13,40 @@ export const LEGAL_ENTITY = {
   email: 'tsts52522@gmail.com',
 };
 
+export interface Testimonial {
+  /** 會員在官方帳號打的原話，逐字照登、不要潤稿 */
+  quote: string;
+  /** 署名到「大樓・會員」為止。他們是寫給客服的，不是寫給官網的，
+   *  放 LINE 暱稱或頭像就變成未經同意的個資揭露。 */
+  source: string;
+  /** 整排放大顯示 */
+  feature?: boolean;
+}
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    quote: '有人離職後再找工作，一樣找順天大樓，就是奔著駝獸中午吃飯飲料免煩惱。',
+    source: '順天經貿廣場・會員',
+    feature: true,
+  },
+  {
+    quote: '謝謝～～你們對單人訂餐真的很友善～～感恩',
+    source: '順天經貿廣場・會員',
+  },
+  {
+    quote: '美食沙漠需要駝獸，希望駝獸賺大錢。',
+    source: '商辦駝獸會員',
+  },
+  {
+    quote: '希望你們生意可以做很久～造福我們不多人訂餐的公司。',
+    source: '商辦駝獸會員',
+  },
+  {
+    quote: '感謝你們提供的服務，最近跟同事聊天才知道有這個平台。',
+    source: '商辦駝獸會員',
+  },
+];
+
 export interface FaqItem {
   q: string;
   /** 一段一個字串，元件會逐段排版 */

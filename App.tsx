@@ -10,6 +10,7 @@ import BuildingSelection from './components/BuildingSelection';
 import DeliveryShowcase from './components/DeliveryShowcase';
 import BuildingIntake from './components/BuildingIntake';
 import RoleCards from './components/RoleCards';
+import Testimonials from './components/Testimonials';
 import Faq from './components/Faq';
 import LegalPage from './components/LegalPage';
 import NotFound from './components/NotFound';
@@ -96,6 +97,7 @@ const App: React.FC = () => {
             <Comparison />
             <HowItWorks onNavigate={navigate} />
             <DeliveryShowcase />
+            <Testimonials />
             <RoleCards onNavigate={navigate} />
             <Partners />
           </>

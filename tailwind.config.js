@@ -47,8 +47,15 @@ export default {
               '0 0 0 2px rgba(201, 70, 37, 0.6), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 0 0 8px rgba(201, 70, 37, 0.14)',
           },
         },
+        // 跑馬燈：內容複製成兩份，跑到 -50% 剛好接回原點、看不出接縫。
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
       animation: {
+        /* 秒數在元件用 inline style 覆寫，讓每一排的 px/秒 一致 */
+        marquee: 'marquee 40s linear infinite',
         sheen: 'sheen 3.2s ease-out infinite',
         glow: 'glow 2.6s ease-in-out infinite',
       },

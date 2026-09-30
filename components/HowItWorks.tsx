@@ -24,7 +24,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onNavigate }) => {
                 onClick={() => setRole('consumer')}
                 className={`px-8 py-3 rounded-lg text-sm font-bold transition-all duration-200 z-10 ${role === 'consumer'
                   ? 'bg-white text-brand-red shadow-md'
-                  : 'text-gray-500 hover:text-gray-700'
+                  : 'text-gray-600 hover:text-gray-800'
                   }`}
               >
                 我是員工 (訂餐)
@@ -33,7 +33,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onNavigate }) => {
                 onClick={() => setRole('restaurant')}
                 className={`px-8 py-3 rounded-lg text-sm font-bold transition-all duration-200 z-10 ${role === 'restaurant'
                   ? 'bg-brand-red text-white shadow-md'
-                  : 'text-gray-500 hover:text-gray-700'
+                  : 'text-gray-600 hover:text-gray-800'
                   }`}
               >
                 我是餐廳 (接單)
@@ -166,7 +166,7 @@ interface StepCardProps {
 
 const StepCard: React.FC<StepCardProps> = ({ number, icon, title, description }) => (
   <div className="h-full bg-white p-8 rounded-2xl shadow-lg border-b-4 border-brand-red relative group hover:-translate-y-2 transition-transform duration-300">
-    <div className="absolute top-4 right-4 text-4xl font-black text-gray-100 group-hover:text-brand-red/10 transition-colors">
+    <div aria-hidden="true" className="absolute top-4 right-4 text-4xl font-black text-gray-100 group-hover:text-brand-red/10 transition-colors">
       {number}
     </div>
     <div className="w-16 h-16 bg-brand-red rounded-2xl flex items-center justify-center mb-6 shadow-md rotate-3 group-hover:rotate-6 transition-transform">

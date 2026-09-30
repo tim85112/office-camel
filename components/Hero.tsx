@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
 
           {/* Left: the promise */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-brand-red/10 text-brand-red font-medium text-sm mb-6 border border-brand-red/20">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white text-brand-red font-medium text-sm mb-6 border border-brand-red/30 shadow-sm">
               <span className="flex h-2 w-2 relative mr-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-red"></span>

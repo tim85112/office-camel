@@ -90,6 +90,13 @@ function build(page) {
   html = swap(html, /<meta name="twitter:description" content="[^"]*" \/>/,
     `<meta name="twitter:description" content="${desc}" />`, 'twitter:description');
 
+  if (meta.preloadImage) {
+    html = swap(html, /<link rel="preconnect" href="https:\/\/fonts.googleapis.com" \/>/,
+      `<link rel="preload" as="image" href="${meta.preloadImage}" fetchpriority="high" />
+  ` +
+      '<link rel="preconnect" href="https://fonts.googleapis.com" />', 'preload image');
+  }
+
   const blocks = [organizationLd()];
   if (page === 'faq') blocks.push(faqLd());
   const ld = blocks

@@ -81,6 +81,8 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
                 src="/showcase/hero-pickup.webp"
                 width="1080"
                 height="900"
+                loading="eager"
+                fetchPriority="high"
                 decoding="async"
                 alt="配送員在商辦大樓一樓取餐處，桌上放著標有取餐碼的保溫袋，同仁前來領餐"
                 className="w-full h-[320px] sm:h-[420px] lg:h-[480px] object-cover object-center"

@@ -12,6 +12,9 @@ export interface RouteMeta {
   description: string;
   /** 進 sitemap 的優先度；notFound 不進 sitemap */
   priority?: number;
+  /** 這頁的 LCP 圖。React 掛載前瀏覽器看不到它，要靠 <link rel=preload> 先開始抓。
+   *  只寫在需要的那一頁，不要讓 /faq 也去預載首頁的圖。 */
+  preloadImage?: string;
 }
 
 export const ROUTES: Record<Page, RouteMeta> = {
@@ -21,6 +24,7 @@ export const ROUTES: Record<Page, RouteMeta> = {
     description:
       '專為台中商辦大樓設計的合單撮合午餐平台。一人點餐、免運費、免低消。協助餐廳擴大產能、降低抽成。',
     priority: 1.0,
+    preloadImage: '/showcase/hero-pickup.webp',
   },
   buildingSelection: {
     path: '/buildings',

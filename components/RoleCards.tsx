@@ -30,7 +30,7 @@ const ROLES: Role[] = [
     image: '/showcase/role-office.webp',
     alt: '辦公室同仁圍著木桌一起吃午餐餐盒',
     desc: '想在自己的大樓開一個午餐入口，又不想多請人、不想改空間。',
-    points: ['零導入費用', '不佔大樓空間，1F 一張桌子就夠', '每天固定時間送達', '試辦期間隨時可以喊停'],
+    points: ['零導入費用', '不佔大樓空間，1F 一張桌子就夠', '每天固定時間送達'],
     cta: '立即申請導入',
     page: 'buildingIntake',
   },
@@ -52,7 +52,7 @@ const ROLES: Role[] = [
     image: '/showcase/role-delivery.webp',
     alt: '配送夥伴推著載有保溫箱的平台車經過商辦大樓電梯廳',
     desc: '中午一段時間的固定路線，不是搶單制。',
-    points: ['固定班表，不用搶單', '公司提供保溫箱與推車', '路線集中在同一區商辦', '按月計薪'],
+    points: ['固定班表，不用搶單', '公司提供保溫設備', '路線集中在同一區商辦', '高時薪 280 起'],
     cta: '了解配送夥伴',
     href: LINKS.logisticsLine,
   },
@@ -69,8 +69,7 @@ const RoleCards: React.FC<RoleCardsProps> = ({ onNavigate }) => {
         <Reveal>
           <div className="mb-12 text-center md:mb-14">
             <p className="mb-3 text-xs font-bold tracking-[0.2em] text-brand-red">找到你的入口</p>
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">你是哪一種身分？</h2>
-            <p className="text-lg text-gray-600">不同身分走的是不同流程。先選你是誰，再看對應的做法。</p>
+            <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">你是哪一種身分？</h2>
           </div>
         </Reveal>
 

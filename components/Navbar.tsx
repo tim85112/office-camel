@@ -23,10 +23,10 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <a href="https://office-camel.vercel.app/" className="flex-shrink-0 flex items-center cursor-pointer hover:opacity-90 transition-opacity">
-            <img src="/icon-192.png" width="192" height="192" alt="" className="h-9 w-9 rounded-full" />
+            <img src="/icon-192.png" width="192" height="192" alt="" className="h-10 w-10 sm:h-11 sm:w-11 rounded-full" />
             <span className="ml-2.5 flex flex-col leading-none">
-              <span className="text-xl font-bold text-brand-red tracking-tight">商辦駝獸</span>
-              <span className="mt-1 text-[10px] font-semibold tracking-[0.18em] text-gray-400">OFFICE CAMEL</span>
+              <span className="text-xl sm:text-[1.375rem] font-bold text-brand-red tracking-tight">商辦駝獸</span>
+              <span className="mt-1 text-[10px] sm:text-[11px] font-semibold tracking-[0.18em] text-gray-400">OFFICE CAMEL</span>
             </span>
           </a>
 

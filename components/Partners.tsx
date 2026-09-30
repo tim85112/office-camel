@@ -2,8 +2,6 @@ import React from 'react';
 import { PARTNER_CATEGORIES } from '../constants';
 import Reveal from './Reveal';
 
-const TOTAL = PARTNER_CATEGORIES.reduce((sum, c) => sum + c.partners.length, 0);
-
 const Partners: React.FC = () => {
   return (
     <section id="partners" className="py-20 md:py-24 bg-brand-beige/20">
@@ -13,7 +11,7 @@ const Partners: React.FC = () => {
           <div className="mb-12 text-center md:mb-14">
             <p className="mb-3 text-xs font-bold tracking-[0.2em] text-brand-red">BRAND WALL</p>
             <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">精選合作夥伴</h2>
-            <p className="text-lg text-gray-600">從巷弄小店到連鎖品牌，{TOTAL} 家台中餐廳，每天換菜單。</p>
+            <p className="text-lg text-gray-600">從巷弄小店到連鎖品牌，50 家以上台中餐廳，每天換菜單。</p>
           </div>
         </Reveal>
 

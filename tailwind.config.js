@@ -7,6 +7,7 @@ export default {
     './index.tsx',
     './App.tsx',
     './constants.ts',
+    './siteContent.ts',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {

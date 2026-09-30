@@ -3,6 +3,7 @@ import { Utensils, Truck, DollarSign, Clock, Users, ShieldCheck, Box } from 'luc
 export const LINKS = {
   consumerLine: "https://lin.ee/CAkrvvv",
   restaurantLine: "https://lin.ee/W9liNZZ",
+  logisticsLine: "https://lin.ee/MrkTwKS",
   buildingIntakeApi: "https://cowork-admin-mu.vercel.app/api/public/building-intake",
   buildingWishesApi: "https://cowork-admin-mu.vercel.app/api/public/building-wishes",
 };

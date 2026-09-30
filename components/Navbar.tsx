@@ -26,7 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
             <img src="/icon-192.png" width="192" height="192" alt="" className="h-10 w-10 sm:h-11 sm:w-11 rounded-full" />
             <span className="ml-2.5 flex flex-col leading-none">
               <span className="text-xl sm:text-[1.375rem] font-bold text-brand-red tracking-tight">商辦駝獸</span>
-              <span className="mt-1 text-[10px] sm:text-[11px] font-semibold tracking-[0.18em] text-gray-400">OFFICE CAMEL</span>
+              <span className="mt-1 text-[10px] sm:text-[11px] font-semibold tracking-[0.18em] text-gray-500">OFFICE CAMEL</span>
             </span>
           </a>
 
@@ -60,7 +60,12 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
           </div>
 
           <div className="lg:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600 hover:text-brand-red">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? '關閉選單' : '開啟選單'}
+              aria-expanded={isOpen}
+              className="rounded-md p-1 text-gray-600 hover:text-brand-red focus:outline-none focus:ring-2 focus:ring-brand-red"
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>

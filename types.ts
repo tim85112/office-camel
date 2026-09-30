@@ -4,4 +4,5 @@ export type Page =
   | 'buildingIntake'
   | 'faq'
   | 'privacy'
-  | 'terms';
+  | 'terms'
+  | 'notFound';

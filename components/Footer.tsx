@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-brand-beige">快速連結</h4>
+            <h2 className="text-lg font-bold mb-6 text-brand-beige">快速連結</h2>
             <ul className="space-y-3">
               <li>
                 <button
@@ -66,7 +66,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-brand-beige">聯繫我們</h4>
+            <h2 className="text-lg font-bold mb-6 text-brand-beige">聯繫我們</h2>
             <div className="flex flex-col gap-6">
               {CONTACTS.map((contact, index) => (
                 <div key={index} className="min-w-0 space-y-2">

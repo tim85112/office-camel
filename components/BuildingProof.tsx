@@ -24,7 +24,7 @@ const BuildingProof: React.FC<BuildingProofProps> = ({ onNavigate }) => {
               <p className="text-xs font-bold tracking-[0.2em] text-brand-red">已進駐大樓</p>
               <p className="mt-2 text-2xl font-bold text-gray-900 md:text-[1.75rem]">
                 {OPENED.length} 棟商辦
-                <span className="ml-2 text-base font-semibold text-gray-400">每天在送</span>
+                <span className="ml-2 text-base font-semibold text-gray-500">每天在送</span>
               </p>
             </div>
 

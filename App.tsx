@@ -12,38 +12,61 @@ import BuildingIntake from './components/BuildingIntake';
 import RoleCards from './components/RoleCards';
 import Faq from './components/Faq';
 import LegalPage from './components/LegalPage';
-import { PRIVACY_DOC, TERMS_DOC } from './constants';
+import NotFound from './components/NotFound';
+import { PRIVACY_DOC, TERMS_DOC, ROUTES, SITE_ORIGIN, pathToPage } from './constants';
 import type { Page } from './types';
 
-const PAGE_PATHS: Record<Page, string> = {
-  home: '/',
-  buildingSelection: '/buildings',
-  buildingIntake: '/apply',
-  faq: '/faq',
-  privacy: '/privacy',
-  terms: '/terms',
-};
+/** 換頁時同步 head。
+ *  靜態的那一份由 scripts/prerender-meta.mjs 在建置時寫進各頁 HTML
+ *  （LINE / FB 的預覽機器人不跑 JS，只能靠那份）；
+ *  這裡處理的是站內切換後、Google 跑完 JS 看到的版本。 */
+function syncHead(page: Page) {
+  const meta = ROUTES[page];
+  const url = SITE_ORIGIN + meta.path;
+  document.title = meta.title;
 
-const PAGE_TITLES: Record<Page, string> = {
-  home: '商辦駝獸｜商辦午餐 訂餐平台',
-  buildingSelection: '查看大樓｜商辦駝獸',
-  buildingIntake: '公司合作申請｜商辦駝獸',
-  faq: '常見問題｜商辦駝獸',
-  privacy: '隱私權政策｜商辦駝獸',
-  terms: '服務條款｜商辦駝獸',
-};
+  const set = (selector: string, attr: string, value: string) => {
+    const el = document.head.querySelector(selector);
+    if (el) el.setAttribute(attr, value);
+  };
+  set('meta[name="description"]', 'content', meta.description);
+  set('meta[property="og:title"]', 'content', meta.title);
+  set('meta[property="og:description"]', 'content', meta.description);
+  set('meta[name="twitter:title"]', 'content', meta.title);
+  set('meta[name="twitter:description"]', 'content', meta.description);
 
-const pathToPage = (pathname: string): Page => {
-  const match = (Object.entries(PAGE_PATHS) as [Page, string][]).find(([, path]) => path === pathname);
-  return match ? match[0] : 'home';
-};
+  /* 找不到的頁面不要被索引，也不要宣告 canonical —— 否則又變成「我是首頁」 */
+  const canonical = document.head.querySelector('link[rel="canonical"]');
+  let robots = document.head.querySelector('meta[name="robots"]');
+  if (page === 'notFound') {
+    canonical?.setAttribute('href', '');
+    canonical?.remove();
+    if (!robots) {
+      robots = document.createElement('meta');
+      robots.setAttribute('name', 'robots');
+      document.head.appendChild(robots);
+    }
+    robots.setAttribute('content', 'noindex, follow');
+  } else {
+    robots?.remove();
+    if (canonical) {
+      canonical.setAttribute('href', url);
+    } else {
+      const link = document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      link.setAttribute('href', url);
+      document.head.appendChild(link);
+    }
+    set('meta[property="og:url"]', 'content', url);
+  }
+}
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>(() => pathToPage(window.location.pathname));
 
   const navigate = useCallback((page: Page) => {
     setCurrentPage(page);
-    const path = PAGE_PATHS[page];
+    const path = ROUTES[page].path;
     if (window.location.pathname !== path) {
       window.history.pushState({ page }, '', path);
     }
@@ -56,9 +79,8 @@ const App: React.FC = () => {
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
-  /* 分頁標題跟著換。SPA 不換的話，分享出去每一頁的標題都一樣。 */
   useEffect(() => {
-    document.title = PAGE_TITLES[currentPage];
+    syncHead(currentPage);
   }, [currentPage]);
 
   const backHome = useCallback(() => navigate('home'), [navigate]);
@@ -85,8 +107,10 @@ const App: React.FC = () => {
           <Faq onBack={backHome} />
         ) : currentPage === 'privacy' ? (
           <LegalPage doc={PRIVACY_DOC} onBack={backHome} />
-        ) : (
+        ) : currentPage === 'terms' ? (
           <LegalPage doc={TERMS_DOC} onBack={backHome} />
+        ) : (
+          <NotFound onNavigate={navigate} />
         )}
       </main>
       {/* Footer 移出首頁分支：每一頁都要能點到隱私權政策與服務條款 */}

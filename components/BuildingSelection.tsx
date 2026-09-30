@@ -102,7 +102,7 @@ const BuildingSelection: React.FC<BuildingSelectionProps> = ({ onBack }) => {
                                             連署開發中
                                         </span>
                                     ) : (
-                                        <span className="text-xs text-gray-400 border border-gray-200 px-3 py-1 rounded-full">
+                                        <span className="text-xs text-gray-500 border border-gray-200 px-3 py-1 rounded-full">
                                             連署開發中
                                         </span>
                                     )}

@@ -47,7 +47,7 @@ const Faq: React.FC<FaqProps> = ({ onBack }) => {
               <section>
                 <div className="mb-2 flex items-baseline gap-3 border-b border-gray-200 pb-4">
                   <h2 className="text-xl font-bold text-gray-900 md:text-2xl">{category.label}</h2>
-                  <span className="text-sm text-gray-400">{category.items.length} 題</span>
+                  <span className="text-sm text-gray-500">{category.items.length} 題</span>
                 </div>
 
                 <div className="divide-y divide-gray-100">

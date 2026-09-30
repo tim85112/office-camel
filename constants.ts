@@ -206,3 +206,4 @@ export const BUILDINGS: Record<District, Building[]> = {
 };
 
 export * from './siteContent';
+export * from './routes';

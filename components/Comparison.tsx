@@ -39,7 +39,7 @@ const Comparison: React.FC = () => {
                       <span className="text-sm font-semibold text-gray-500">{item.feature}</span>
                     </div>
                     <div className="flex items-center justify-center border-t border-gray-100 px-6 py-6 text-center">
-                      <span className="text-base text-gray-400">{item.traditional}</span>
+                      <span className="text-base text-gray-500">{item.traditional}</span>
                     </div>
                     <div className="flex items-center justify-center gap-2 border-t border-brand-red/10 bg-brand-red/[0.05] px-6 py-6 text-center">
                       <Check className="h-4 w-4 flex-shrink-0 text-brand-red" />
@@ -60,8 +60,8 @@ const Comparison: React.FC = () => {
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     <div className="rounded-xl bg-gray-50 p-3 ring-1 ring-gray-100">
-                      <p className="mb-1 text-xs text-gray-400">傳統外送平台</p>
-                      <p className="text-sm text-gray-400">{item.traditional}</p>
+                      <p className="mb-1 text-xs text-gray-500">傳統外送平台</p>
+                      <p className="text-sm text-gray-500">{item.traditional}</p>
                     </div>
                     <div
                       style={{ animationDelay: `${idx * 180}ms` }}

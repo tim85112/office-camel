@@ -52,7 +52,7 @@ const ROLES: Role[] = [
     image: '/showcase/role-delivery.webp',
     alt: '配送夥伴推著載有保溫箱的平台車經過商辦大樓電梯廳',
     desc: '中午一段時間的固定路線，不是搶單制。',
-    points: ['固定班表，不用搶單', '公司提供保溫設備', '總路線 3～7 公里', '高時薪 280 起'],
+    points: ['固定班表，不用搶單', '公司提供保溫設備', '總路線 3～7 公里', '一趟 70 分鐘，實拿 280～340 元'],
     cta: '了解配送夥伴',
     href: LINKS.logisticsLine,
   },

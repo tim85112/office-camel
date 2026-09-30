@@ -1,4 +1,4 @@
-import { Utensils, Soup, Salad, Sandwich, CupSoda, Truck, DollarSign, Clock, ShieldCheck, Box } from 'lucide-react';
+import { Utensils, Soup, Salad, Sandwich, CupSoda, Truck, DollarSign, Clock, ShieldCheck } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export const LINKS = {
@@ -131,29 +131,6 @@ export const COMPARISON_DATA = [
     traditional: "揪團、找零錢、算人頭",
     beast: "個人點餐、電子支付",
     icon: Clock,
-  },
-];
-
-export const B_SIDE_BENEFITS = [
-  {
-    title: "預約制產能優化",
-    description: "不壓縮現場客量，產能利用最大化。\n提前接單，從容備餐。",
-    icon: Clock,
-  },
-  {
-    title: "單筆大宗穩單",
-    description: "一單即數十份，大幅提升出餐效率。\n不再為了一碗麵跑一趟。",
-    icon: Box,
-  },
-  {
-    title: "免三費",
-    description: "免上架費、免月租、免機器費。\n用 Line 即可接單，利潤回歸店家。",
-    icon: DollarSign,
-  },
-  {
-    title: "客訴我來扛",
-    description: "餐點瑕疵、漏送由平台先行補償，無耗時處理抱怨，專注做菜即可。",
-    icon: ShieldCheck,
   },
 ];
 

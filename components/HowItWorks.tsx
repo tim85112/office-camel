@@ -1,157 +1,69 @@
-import React, { useState } from 'react';
-import { Smartphone, ClipboardList, Package, Truck, ArrowRight } from 'lucide-react';
-import { B_SIDE_BENEFITS, LINKS } from '../constants';
+import React from 'react';
+import { Smartphone, ClipboardList, Package, ArrowRight } from 'lucide-react';
 import Reveal from './Reveal';
 
 interface HowItWorksProps {
   onNavigate: (page: 'home' | 'buildingSelection') => void;
 }
 
+/**
+ * 這一區固定只講消費者。
+ *
+ * 原本這裡有一顆「我是員工／我是餐廳」切換鈕，但底下的「你是哪一種身分？」
+ * 已經在做身分分流了 —— 同一頁問兩次「你是誰」，而且兩邊分類還不一樣
+ * （這裡兩種、角色卡三種）。餐廳那半邊的內容也跟角色卡重複。
+ * 切換鈕拿掉後，餐廳的說法全部集中在角色卡一個地方。
+ */
 const HowItWorks: React.FC<HowItWorksProps> = ({ onNavigate }) => {
-  const [role, setRole] = useState<'consumer' | 'restaurant'>('consumer');
-
   return (
     <section id="how-it-works" className="py-20 bg-brand-beige/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">簡單三步驟，輕鬆搞定</h2>
-
-          {/* Toggle Switch */}
-          <div className="flex justify-center mb-10">
-            <div className="bg-gray-200 p-1 rounded-xl inline-flex relative">
-              <button
-                onClick={() => setRole('consumer')}
-                className={`px-8 py-3 rounded-lg text-sm font-bold transition-all duration-200 z-10 ${role === 'consumer'
-                  ? 'bg-white text-brand-red shadow-md'
-                  : 'text-gray-600 hover:text-gray-800'
-                  }`}
-              >
-                我是員工 (訂餐)
-              </button>
-              <button
-                onClick={() => setRole('restaurant')}
-                className={`px-8 py-3 rounded-lg text-sm font-bold transition-all duration-200 z-10 ${role === 'restaurant'
-                  ? 'bg-brand-red text-white shadow-md'
-                  : 'text-gray-600 hover:text-gray-800'
-                  }`}
-              >
-                我是餐廳 (接單)
-              </button>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">簡單三步驟，輕鬆搞定</h2>
           </div>
-        </div>
         </Reveal>
 
         {/* User Flow Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16 relative">
+        <div className="grid md:grid-cols-3 gap-8 relative">
           {/* Connecting line for desktop */}
           <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -z-10 transform -translate-y-1/2 scale-x-75"></div>
 
-          {role === 'consumer' ? (
-            <>
-              <Reveal delay={0} className="h-full">
-                <StepCard
-                  number="01"
-                  icon={<Smartphone className="w-8 h-8 text-white" />}
-                  title="加入大樓官方 LINE"
-                  description="點擊按鈕加入大樓專屬 LINE 帳號，每天收到當日菜單。"
-                />
-              </Reveal>
-              <Reveal delay={110} className="h-full">
-                <StepCard
-                  number="02"
-                  icon={<ClipboardList className="w-8 h-8 text-white" />}
-                  title="平台網站選餐"
-                  description="瀏覽合作餐廳，一鍵下單，支援多元支付。"
-                />
-              </Reveal>
-              <Reveal delay={220} className="h-full">
-                <StepCard
-                  number="03"
-                  icon={<Package className="w-8 h-8 text-white" />}
-                  title="1F 憑碼取餐"
-                  description="中午在大樓指定取餐處，憑取餐碼快速取走餐點。"
-                />
-              </Reveal>
-            </>
-          ) : (
-            <>
-              <Reveal delay={0} className="h-full">
-                <StepCard
-                  number="01"
-                  icon={<ClipboardList className="w-8 h-8 text-white" />}
-                  title="接收彙整訂單"
-                  description="每日截單後，接收整合好的大單，無需處理零散客製化。"
-                />
-              </Reveal>
-              <Reveal delay={110} className="h-full">
-                <StepCard
-                  number="02"
-                  icon={<Package className="w-8 h-8 text-white" />}
-                  title="依取餐碼分袋"
-                  description="只需依照訂單上的「取餐碼」分袋包裝，流程標準化。"
-                />
-              </Reveal>
-              <Reveal delay={220} className="h-full">
-                <StepCard
-                  number="03"
-                  icon={<Truck className="w-8 h-8 text-white" />}
-                  title="平台專員取餐"
-                  description="我們派專人準時到店取餐，您只需專注店內生意。"
-                />
-              </Reveal>
-            </>
-          )}
+          <Reveal delay={0} className="h-full">
+            <StepCard
+              number="01"
+              icon={<Smartphone className="w-8 h-8 text-white" />}
+              title="加入大樓官方 LINE"
+              description="點擊按鈕加入大樓專屬 LINE 帳號，每天收到當日菜單。"
+            />
+          </Reveal>
+          <Reveal delay={110} className="h-full">
+            <StepCard
+              number="02"
+              icon={<ClipboardList className="w-8 h-8 text-white" />}
+              title="平台網站選餐"
+              description="瀏覽合作餐廳，一鍵下單，支援多元支付。"
+            />
+          </Reveal>
+          <Reveal delay={220} className="h-full">
+            <StepCard
+              number="03"
+              icon={<Package className="w-8 h-8 text-white" />}
+              title="1F 憑碼取餐"
+              description="中午在大樓指定取餐處，憑取餐碼快速取走餐點。"
+            />
+          </Reveal>
         </div>
 
-        {/* Restaurant Specific Benefits Section */}
-        {role === 'restaurant' && (
-          <div className="mt-20 bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
-            <div className="text-center mb-12">
-              <span className="text-brand-red font-bold tracking-wider uppercase text-sm">For Partners</span>
-              <h3 className="text-3xl font-bold text-gray-900 mt-2">我們是你最忠誠的「商辦駝獸」</h3>
-              <p className="text-gray-600 mt-4 max-w-2xl mx-auto">幫你把美食送進商辦心臟<br />解決外送平台高抽成與運送痛點。</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {B_SIDE_BENEFITS.map((benefit, idx) => (
-                <div key={idx} className="bg-gray-50 p-6 rounded-xl hover:bg-brand-beige/30 transition-colors duration-300">
-                  <div className="w-12 h-12 bg-brand-yellow/20 rounded-lg flex items-center justify-center mb-4">
-                    <benefit.icon className="w-6 h-6 text-brand-dark" />
-                  </div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">{benefit.title}</h4>
-                  <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">{benefit.description}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center">
-              <a
-                href={LINKS.restaurantLine}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-brand-dark text-white px-8 py-3 rounded-lg font-bold hover:bg-black transition-all"
-              >
-                成為合作餐廳
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </a>
-            </div>
-          </div>
-        )}
-
-        {role === 'consumer' && (
-          <div className="mt-12 text-center">
-            <button
-              onClick={() => onNavigate('buildingSelection')}
-              className="inline-flex items-center bg-brand-red text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition-all shadow-lg"
-            >
-              立即加入點餐
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </button>
-          </div>
-        )}
-
+        <div className="mt-12 text-center">
+          <button
+            onClick={() => onNavigate('buildingSelection')}
+            className="inline-flex items-center bg-brand-red text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition-all shadow-lg"
+          >
+            立即加入點餐
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </button>
+        </div>
       </div>
     </section>
   );

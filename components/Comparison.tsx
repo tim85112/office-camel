@@ -10,8 +10,7 @@ const Comparison: React.FC = () => {
 
         <Reveal>
           <div className="text-center mb-12 md:mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">為什麼選擇商辦駝獸？</h2>
-            <p className="text-lg text-gray-600">同一家店、同一份餐，差別在中間那一段。</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">為什麼選擇商辦駝獸？</h2>
           </div>
         </Reveal>
 
@@ -27,9 +26,10 @@ const Comparison: React.FC = () => {
                   <X className="h-5 w-5 text-gray-400" />
                   <span className="text-lg font-bold text-gray-500">傳統外送平台</span>
                 </div>
-                <div className="flex items-center justify-center gap-2 bg-brand-red px-6 py-5">
-                  <Check className="h-5 w-5 text-white" />
-                  <span className="text-lg font-extrabold text-white">商辦駝獸</span>
+                <div className="relative flex items-center justify-center gap-2 overflow-hidden bg-brand-red px-6 py-5">
+                  <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-[.is-shown]:animate-sheen motion-reduce:hidden"></span>
+                  <Check className="relative h-5 w-5 text-white" />
+                  <span className="relative text-lg font-extrabold text-white">商辦駝獸</span>
                 </div>
 
                 {COMPARISON_DATA.map((item) => (
@@ -52,20 +52,25 @@ const Comparison: React.FC = () => {
 
             {/* 手機：一個項目一組，右邊那張打亮 */}
             <div className="divide-y divide-gray-100 md:hidden">
-              {COMPARISON_DATA.map((item) => (
+              {COMPARISON_DATA.map((item, idx) => (
                 <div key={item.feature} className="p-5">
                   <div className="mb-3 flex items-center gap-2">
                     <item.icon className="h-4 w-4 text-gray-400" />
                     <span className="text-sm font-semibold text-gray-500">{item.feature}</span>
                   </div>
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="rounded-xl bg-gray-50 p-3">
+                    <div className="rounded-xl bg-gray-50 p-3 ring-1 ring-gray-100">
                       <p className="mb-1 text-xs text-gray-400">傳統外送平台</p>
                       <p className="text-sm text-gray-400">{item.traditional}</p>
                     </div>
-                    <div className="rounded-xl bg-brand-red/[0.06] p-3 ring-1 ring-brand-red/15">
-                      <p className="mb-1 flex items-center gap-1 text-xs font-medium text-brand-red"><Check className="h-3 w-3" />商辦駝獸</p>
-                      <p className="text-sm font-bold text-gray-900">{item.beast}</p>
+                    <div className="relative overflow-hidden rounded-xl bg-white p-3 shadow-md ring-2 ring-brand-red/35">
+                      <span
+                        aria-hidden="true"
+                        style={{ animationDelay: `${idx * 140}ms` }}
+                        className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-brand-red/20 to-transparent opacity-0 group-[.is-shown]:animate-sheen motion-reduce:hidden"
+                      ></span>
+                      <p className="relative mb-1 flex items-center gap-1 text-xs font-bold text-brand-red"><Check className="h-3 w-3" />商辦駝獸</p>
+                      <p className="relative text-sm font-bold text-gray-900">{item.beast}</p>
                     </div>
                   </div>
                 </div>

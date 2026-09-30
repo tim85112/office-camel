@@ -28,6 +28,7 @@ const BUILDINGS: Record<District, Building[]> = {
         { name: '凱基人壽市政大樓', status: 'opened', lineUrl: 'https://lin.ee/uTQG4LH', note: '持續配送中' },
         { name: '順天經貿廣場 (STTC)', status: 'opened', lineUrl: 'https://lin.ee/ZP3h0Xp', note: '持續配送中' },
         { name: '中國信託銀行－市政分行', status: 'opened', lineUrl: 'https://lin.ee/NeUeKvn', note: '近期正式啟用' },
+        { name: '誠品生活480', status: 'opened', lineUrl: 'https://lin.ee/w4bJSYj', note: '近期正式啟用' },
         { name: '興富發鼎盛 BHW', slug: 'hfh-dingsheng-bhw', status: 'developing' },
         { name: 'W 國際商務中心－七期旗艦館', slug: 'w-international-qiqi', status: 'developing' },
         { name: 'NTC 國家商貿中心', slug: 'ntc-national-trade', status: 'developing' },

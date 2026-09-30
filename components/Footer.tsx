@@ -53,6 +53,14 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   餐廳夥伴加盟 (Line)
                 </a>
               </li>
+              <li>
+                <button
+                  onClick={() => onNavigate('faq')}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  常見問題
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -92,8 +100,8 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} 商辦駝獸 Office Camel. All rights reserved.</p>
           <div className="mt-4 md:mt-0 flex space-x-6">
-            <span className="hover:text-white cursor-pointer">隱私權政策</span>
-            <span className="hover:text-white cursor-pointer">服務條款</span>
+            <button onClick={() => onNavigate('privacy')} className="hover:text-white transition-colors">隱私權政策</button>
+            <button onClick={() => onNavigate('terms')} className="hover:text-white transition-colors">服務條款</button>
           </div>
         </div>
       </div>

@@ -1,1 +1,7 @@
-export type Page = 'home' | 'buildingSelection' | 'buildingIntake';
+export type Page =
+  | 'home'
+  | 'buildingSelection'
+  | 'buildingIntake'
+  | 'faq'
+  | 'privacy'
+  | 'terms';

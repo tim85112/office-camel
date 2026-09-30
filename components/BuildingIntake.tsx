@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Building2, Loader2, Mail, MapPin, Phone, UserRound } from 'lucide-react';
-import { LINKS } from '../constants';
+import { ArrowLeft, Building2, Loader2, Mail, MapPin, Phone, ShieldCheck, UserRound } from 'lucide-react';
+import { LINKS, REPLY_SLA } from '../constants';
+import type { Page } from '../types';
 
 interface BuildingIntakeProps {
   onBack: () => void;
+  onNavigate: (page: Page) => void;
 }
 
 type FormState = {
@@ -36,7 +38,7 @@ function validate(form: FormState): string | null {
   return null;
 }
 
-const BuildingIntake: React.FC<BuildingIntakeProps> = ({ onBack }) => {
+const BuildingIntake: React.FC<BuildingIntakeProps> = ({ onBack, onNavigate }) => {
   const [form, setForm] = useState<FormState>(INITIAL_FORM);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -102,6 +104,15 @@ const BuildingIntake: React.FC<BuildingIntakeProps> = ({ onBack }) => {
               以下欄位皆必填。請填行政或可協助大樓導入的窗口資訊。
             </p>
 
+            <div className="mt-5 flex gap-3 rounded-xl bg-brand-beige/40 px-4 py-3.5 text-sm leading-6 text-brand-dark">
+              <ShieldCheck className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-red" />
+              <p>
+                送出後，我們會在 <strong className="font-bold">{REPLY_SLA}</strong>內由專人以電話或 Email 與你聯繫，
+                說明導入方式與所需空間。
+                <span className="text-gray-500">全程零費用，也不會當場要你簽約。</span>
+              </p>
+            </div>
+
             <div className="mt-6 space-y-4">
               <Field label="大樓名稱" required icon={<Building2 className="h-4 w-4" />}>
                 <input
@@ -164,7 +175,10 @@ const BuildingIntake: React.FC<BuildingIntakeProps> = ({ onBack }) => {
 
             {successMessage && (
               <div className="mt-4 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm leading-6 text-green-700">
-                {successMessage}
+                <p className="font-bold">{successMessage}</p>
+                <p className="mt-1 text-green-800/80">
+                  我們會在 {REPLY_SLA}內與你聯繫。想更快討論的話，直接打頁尾的電話找我們也可以。
+                </p>
               </div>
             )}
 
@@ -182,6 +196,18 @@ const BuildingIntake: React.FC<BuildingIntakeProps> = ({ onBack }) => {
                 '送出申請'
               )}
             </button>
+
+            <p className="mt-4 text-center text-xs leading-6 text-gray-500">
+              送出即表示你同意我們依
+              <button
+                type="button"
+                onClick={() => onNavigate('privacy')}
+                className="mx-1 font-semibold text-brand-red underline underline-offset-2 hover:text-red-700"
+              >
+                隱私權政策
+              </button>
+              處理你填寫的聯絡資訊。
+            </p>
           </form>
         </div>
       </div>

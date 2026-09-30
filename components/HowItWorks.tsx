@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, Smartphone, MapPin, ClipboardList, Package, Truck, ArrowRight } from 'lucide-react';
+import { Smartphone, ClipboardList, Package, Truck, ArrowRight } from 'lucide-react';
 import { B_SIDE_BENEFITS, LINKS } from '../constants';
 import Reveal from './Reveal';
 

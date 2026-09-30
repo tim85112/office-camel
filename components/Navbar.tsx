@@ -30,10 +30,11 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
             </span>
           </a>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             <button onClick={() => scrollToSection('problem')} className="text-gray-600 hover:text-brand-red transition-colors">為什麼選擇我們</button>
             <button onClick={() => scrollToSection('how-it-works')} className="text-gray-600 hover:text-brand-red transition-colors">運作流程</button>
             <button onClick={() => scrollToSection('partners')} className="text-gray-600 hover:text-brand-red transition-colors">合作夥伴</button>
+            <button onClick={() => onNavigate('faq')} className="text-gray-600 hover:text-brand-red transition-colors">常見問題</button>
             <div className="flex space-x-4">
               <button
                 onClick={() => onNavigate('buildingIntake')}
@@ -58,7 +59,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
             </div>
           </div>
 
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600 hover:text-brand-red">
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -68,11 +69,12 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100">
+        <div className="lg:hidden bg-white border-t border-gray-100">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <button onClick={() => scrollToSection('problem')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-brand-red hover:bg-brand-beige/30 rounded-md">為什麼選擇我們</button>
             <button onClick={() => scrollToSection('how-it-works')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-brand-red hover:bg-brand-beige/30 rounded-md">運作流程</button>
             <button onClick={() => scrollToSection('partners')} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-brand-red hover:bg-brand-beige/30 rounded-md">合作夥伴</button>
+            <button onClick={() => { setIsOpen(false); onNavigate('faq'); }} className="block w-full text-left px-3 py-2 text-gray-600 hover:text-brand-red hover:bg-brand-beige/30 rounded-md">常見問題</button>
             <div className="mt-4 flex flex-col space-y-2 px-3">
               <button
                 onClick={() => {

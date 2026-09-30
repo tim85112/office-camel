@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { User, Smartphone, MapPin, ClipboardList, Package, Truck, ArrowRight } from 'lucide-react';
 import { B_SIDE_BENEFITS, LINKS } from '../constants';
+import Reveal from './Reveal';
 
 interface HowItWorksProps {
   onNavigate: (page: 'home' | 'buildingSelection') => void;
@@ -12,6 +13,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onNavigate }) => {
   return (
     <section id="how-it-works" className="py-20 bg-brand-beige/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal>
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">簡單三步驟，輕鬆搞定</h2>
 
@@ -39,6 +41,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onNavigate }) => {
             </div>
           </div>
         </div>
+        </Reveal>
 
         {/* User Flow Cards */}
         <div className="grid md:grid-cols-3 gap-8 mb-16 relative">
@@ -47,45 +50,57 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onNavigate }) => {
 
           {role === 'consumer' ? (
             <>
-              <StepCard
-                number="01"
-                icon={<Smartphone className="w-8 h-8 text-white" />}
-                title="加入 LINE 群組"
-                description="點擊按鈕加入大樓專屬 LINE 群組，獲取每日菜單。"
-              />
-              <StepCard
-                number="02"
-                icon={<ClipboardList className="w-8 h-8 text-white" />}
-                title="平台網站選餐"
-                description="瀏覽合作餐廳，一鍵下單，支援多元支付。"
-              />
-              <StepCard
-                number="03"
-                icon={<Package className="w-8 h-8 text-white" />}
-                title="1F 憑碼取餐"
-                description="12:00於大樓指定取餐處，憑取餐碼快速取走餐點。"
-              />
+              <Reveal delay={0} className="h-full">
+                <StepCard
+                  number="01"
+                  icon={<Smartphone className="w-8 h-8 text-white" />}
+                  title="加入大樓官方 LINE"
+                  description="點擊按鈕加入大樓專屬 LINE 帳號，每天收到當日菜單。"
+                />
+              </Reveal>
+              <Reveal delay={110} className="h-full">
+                <StepCard
+                  number="02"
+                  icon={<ClipboardList className="w-8 h-8 text-white" />}
+                  title="平台網站選餐"
+                  description="瀏覽合作餐廳，一鍵下單，支援多元支付。"
+                />
+              </Reveal>
+              <Reveal delay={220} className="h-full">
+                <StepCard
+                  number="03"
+                  icon={<Package className="w-8 h-8 text-white" />}
+                  title="1F 憑碼取餐"
+                  description="中午在大樓指定取餐處，憑取餐碼快速取走餐點。"
+                />
+              </Reveal>
             </>
           ) : (
             <>
-              <StepCard
-                number="01"
-                icon={<ClipboardList className="w-8 h-8 text-white" />}
-                title="接收彙整訂單"
-                description="每日截單後，接收整合好的大單，無需處理零散客製化。"
-              />
-              <StepCard
-                number="02"
-                icon={<Package className="w-8 h-8 text-white" />}
-                title="依取餐碼分袋"
-                description="只需依照訂單上的「取餐碼」分袋包裝，流程標準化。"
-              />
-              <StepCard
-                number="03"
-                icon={<Truck className="w-8 h-8 text-white" />}
-                title="平台專員取餐"
-                description="我們派專人準時到店取餐，您只需專注店內生意。"
-              />
+              <Reveal delay={0} className="h-full">
+                <StepCard
+                  number="01"
+                  icon={<ClipboardList className="w-8 h-8 text-white" />}
+                  title="接收彙整訂單"
+                  description="每日截單後，接收整合好的大單，無需處理零散客製化。"
+                />
+              </Reveal>
+              <Reveal delay={110} className="h-full">
+                <StepCard
+                  number="02"
+                  icon={<Package className="w-8 h-8 text-white" />}
+                  title="依取餐碼分袋"
+                  description="只需依照訂單上的「取餐碼」分袋包裝，流程標準化。"
+                />
+              </Reveal>
+              <Reveal delay={220} className="h-full">
+                <StepCard
+                  number="03"
+                  icon={<Truck className="w-8 h-8 text-white" />}
+                  title="平台專員取餐"
+                  description="我們派專人準時到店取餐，您只需專注店內生意。"
+                />
+              </Reveal>
             </>
           )}
         </div>
@@ -150,7 +165,7 @@ interface StepCardProps {
 }
 
 const StepCard: React.FC<StepCardProps> = ({ number, icon, title, description }) => (
-  <div className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-brand-red relative group hover:-translate-y-2 transition-transform duration-300">
+  <div className="h-full bg-white p-8 rounded-2xl shadow-lg border-b-4 border-brand-red relative group hover:-translate-y-2 transition-transform duration-300">
     <div className="absolute top-4 right-4 text-4xl font-black text-gray-100 group-hover:text-brand-red/10 transition-colors">
       {number}
     </div>

@@ -1,20 +1,23 @@
 import React from 'react';
 import { PARTNERS } from '../constants';
+import Reveal from './Reveal';
 
 const Partners: React.FC = () => {
   return (
-    <section id="partners" className="py-20 bg-white">
+    <section id="partners" className="py-20 bg-brand-beige/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">精選合作夥伴</h2>
-          <p className="text-lg text-gray-600">匯集台中人氣美食，每天午餐都有新選擇。</p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">精選合作夥伴</h2>
+            <p className="text-lg text-gray-600">匯集台中人氣美食，每天午餐都有新選擇。</p>
+          </div>
+        </Reveal>
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
           {PARTNERS.map((partner, index) => (
             <div 
               key={index} 
-              className="group flex flex-col items-center justify-center p-4 bg-gray-50 rounded-xl hover:bg-white hover:shadow-lg border border-gray-100 hover:border-brand-yellow transition-all duration-300 h-32"
+              className="group flex flex-col items-center justify-center p-4 bg-white/70 rounded-xl hover:bg-white hover:shadow-lg border border-white hover:border-brand-yellow transition-all duration-300 h-32"
             >
               <div className="w-full h-16 flex items-center justify-center mb-2 overflow-hidden">
                  {partner.logo ? (

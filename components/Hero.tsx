@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Building2, Store, Truck } from 'lucide-react';
 import { LINKS } from '../constants';
 import type { Page } from '../types';
 
@@ -8,13 +8,13 @@ interface HeroProps {
 }
 
 const STATS = [
+  { value: '1 人', label: '就能點，不用揪團' },
   { value: '$0', label: '運費・低消・平台費' },
   { value: '50+ 家', label: '合作餐廳，天天換菜單' },
-  { value: '12:00', label: '準時送達大樓一樓' },
 ];
 
-const secondaryLinkClass =
-  'underline decoration-gray-300 underline-offset-4 hover:text-brand-red hover:decoration-brand-red transition-colors';
+const chipClass =
+  'inline-flex items-center justify-center gap-1.5 rounded-xl border border-gray-200 bg-white px-3 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-red/40 hover:text-brand-red hover:shadow-md sm:gap-2 sm:px-4';
 
 const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   return (
@@ -58,20 +58,20 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
 
-            <p className="mt-5 text-sm text-gray-500">
-              我是
-              <button onClick={() => onNavigate('buildingIntake')} className={`mx-1.5 ${secondaryLinkClass}`}>
-                公司窗口
+            <div className="mt-7 grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:gap-3 sm:justify-center lg:justify-start">
+              <button onClick={() => onNavigate('buildingIntake')} className={chipClass}>
+                <Building2 className="h-4 w-4" />
+                公司合作
               </button>
-              ·
-              <a href={LINKS.restaurantLine} target="_blank" rel="noopener noreferrer" className={`mx-1.5 ${secondaryLinkClass}`}>
-                餐廳老闆
+              <a href={LINKS.restaurantLine} target="_blank" rel="noopener noreferrer" className={chipClass}>
+                <Store className="h-4 w-4" />
+                餐廳合作
               </a>
-              ·
-              <a href={LINKS.logisticsLine} target="_blank" rel="noopener noreferrer" className={`mx-1.5 ${secondaryLinkClass}`}>
-                想跑物流
+              <a href={LINKS.logisticsLine} target="_blank" rel="noopener noreferrer" className={chipClass}>
+                <Truck className="h-4 w-4" />
+                配送夥伴
               </a>
-            </p>
+            </div>
           </div>
 
           {/* Right: what it actually looks like */}
@@ -85,13 +85,6 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
                 alt="配送員在商辦大樓一樓取餐處，桌上放著標有取餐碼的保溫袋，同仁前來領餐"
                 className="w-full h-[320px] sm:h-[420px] lg:h-[480px] object-cover object-center"
               />
-              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/70 to-transparent"></div>
-              <div className="absolute bottom-5 left-5 right-5">
-                <span className="inline-flex items-center rounded-full bg-white/95 px-4 py-2 text-sm font-medium text-gray-800 shadow-md">
-                  <span className="mr-2 h-2 w-2 flex-shrink-0 rounded-full bg-brand-red"></span>
-                  順天經貿廣場 1F・每個袋子都有取餐碼
-                </span>
-              </div>
             </div>
           </div>
         </div>

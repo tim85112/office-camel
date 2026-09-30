@@ -19,7 +19,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <img src="/icon-192.png" width="192" height="192" alt="" className="h-10 w-10 rounded-full" />
               <span className="ml-3 flex flex-col leading-none">
                 <span className="text-xl font-bold text-white tracking-tight">商辦駝獸</span>
-                <span className="mt-1 text-[10px] font-semibold tracking-[0.18em] text-gray-500">OFFICE CAMEL</span>
+                <span className="mt-1 text-[10px] font-semibold tracking-[0.18em] text-gray-400">OFFICE CAMEL</span>
               </span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
@@ -73,7 +73,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   <div className="flex items-start">
                     <UserIcon className="w-5 h-5 text-brand-red mr-3 mt-1" />
                     <div>
-                      <p className="text-sm text-gray-500">合作聯繫專員</p>
+                      <p className="text-sm text-gray-400">合作聯繫專員</p>
                       <p className="text-white font-medium">{contact.name}</p>
                     </div>
                   </div>
@@ -97,7 +97,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
           <p>&copy; {new Date().getFullYear()} 商辦駝獸 Office Camel. All rights reserved.</p>
           <div className="mt-4 md:mt-0 flex space-x-6">
             <button onClick={() => onNavigate('privacy')} className="hover:text-white transition-colors">隱私權政策</button>

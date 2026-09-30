@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowLeft, MessageCircle, Phone } from 'lucide-react';
-import { CONTACTS, LINKS, type LegalDoc } from '../constants';
+import { ArrowLeft, Mail, MessageCircle, Phone } from 'lucide-react';
+import { CONTACTS, LEGAL_ENTITY, LINKS, type LegalDoc } from '../constants';
 
 interface LegalPageProps {
   doc: LegalDoc;
@@ -59,7 +59,19 @@ const LegalPage: React.FC<LegalPageProps> = ({ doc, onBack }) => {
             <p className="mb-4 text-sm leading-7 text-gray-600">
               對本文件或你的個人資料有任何疑問，以下任一方式都可以找到我們。
             </p>
+            <p className="mb-4 text-sm leading-7 text-gray-700">
+              營運主體：<strong className="font-bold">{LEGAL_ENTITY.name}</strong>
+              <span className="mx-2 text-gray-300">|</span>
+              統一編號：{LEGAL_ENTITY.taxId}
+            </p>
             <div className="flex flex-col gap-3 text-sm">
+              <a
+                href={`mailto:${LEGAL_ENTITY.email}`}
+                className="inline-flex items-center gap-2.5 font-semibold text-brand-dark hover:text-brand-red"
+              >
+                <Mail className="h-4 w-4 text-brand-red" />
+                {LEGAL_ENTITY.email}
+              </a>
               <a
                 href={LINKS.consumerLine}
                 target="_blank"

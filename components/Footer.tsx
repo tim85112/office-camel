@@ -1,6 +1,6 @@
 import React from 'react';
-import { Phone, MessageCircle } from 'lucide-react';
-import { CONTACTS, LINKS } from '../constants';
+import { Phone, MessageCircle, Mail } from 'lucide-react';
+import { CONTACTS, LEGAL_ENTITY, LINKS } from '../constants';
 import type { Page } from '../types';
 
 interface FooterProps {
@@ -93,12 +93,34 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   )}
                 </div>
               ))}
+
+              <div className="min-w-0 border-t border-gray-800 pt-5">
+                <div className="flex items-start">
+                  <Mail className="w-5 h-5 text-brand-red mr-3 mt-1" />
+                  <div className="min-w-0">
+                    <p className="text-sm text-gray-400">客服信箱</p>
+                    <a
+                      href={`mailto:${LEGAL_ENTITY.email}`}
+                      className="block break-all text-white hover:text-brand-yellow transition-colors"
+                    >
+                      {LEGAL_ENTITY.email}
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} 商辦駝獸 Office Camel. All rights reserved.</p>
+          <div className="text-center md:text-left">
+            <p>&copy; {new Date().getFullYear()} 商辦駝獸 Office Camel. All rights reserved.</p>
+            <p className="mt-1.5">
+              {LEGAL_ENTITY.name}
+              <span className="mx-2 text-gray-600">|</span>
+              統一編號 {LEGAL_ENTITY.taxId}
+            </p>
+          </div>
           <div className="mt-4 md:mt-0 flex space-x-6">
             <button onClick={() => onNavigate('privacy')} className="hover:text-white transition-colors">隱私權政策</button>
             <button onClick={() => onNavigate('terms')} className="hover:text-white transition-colors">服務條款</button>

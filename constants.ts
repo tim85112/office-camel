@@ -1,4 +1,5 @@
-import { Utensils, Truck, DollarSign, Clock, Users, ShieldCheck, Box } from 'lucide-react';
+import { Utensils, Soup, Salad, Sandwich, CupSoda, Truck, DollarSign, Clock, ShieldCheck, Box } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 
 export const LINKS = {
   consumerLine: "https://lin.ee/CAkrvvv",
@@ -26,45 +27,89 @@ export const CONTACTS = [
   }
 ];
 
-export const PARTNERS = [
-  { name: "湘春家鍋燒意麵", logo: "/logos/p01.webp" },
-  { name: "丰樂食堂", logo: "/logos/p02.webp" },
-  { name: "迷客夏", logo: "/logos/p03.webp" },
-  { name: "8私廚小餐館", logo: "/logos/p04.webp" },
-  { name: "食見生活", logo: "/logos/p05.webp" },
-  { name: "青序智茶", logo: "/logos/p06.webp" },
-  { name: "蛋白盒子", logo: "/logos/p07.webp" },
-  { name: "一粒麥子陳傳盛爌肉飯", logo: "/logos/p08.webp" },
-  { name: "TEA'S原味", logo: "/logos/p09.webp" },
-  { name: "OKKO義式小館", logo: "/logos/p10.webp" },
-  { name: "WAYMAKER COFFEE", logo: "/logos/p11.webp" },
-  { name: "隨主飡法式水煮", logo: "/logos/p12.webp" },
-  { name: "Gatewell Coffee Roasters", logo: "/logos/p13.webp" },
-  { name: "九菜盒子", logo: "/logos/p14.webp" },
-  { name: "上舫港式燒臘", logo: "/logos/p15.webp" },
-  { name: "昇牛肉飯", logo: "/logos/p16.webp" },
-  { name: "耶濃搖滾豆漿", logo: "/logos/p17.webp" },
-  { name: "鹿港洪爌肉飯", logo: "/logos/p18.webp" },
-  { name: "本便當", logo: "/logos/p19.webp" },
-  { name: "丘森茶室", logo: "/logos/p20.webp" },
-  { name: "吐司男", logo: "/logos/p21.webp" },
-  { name: "麵涼涼麵", logo: "/logos/p22.webp" },
-  { name: "日青優格", logo: "/logos/p23.webp" },
-  { name: "澎發號小卷米粉", logo: "/logos/p24.webp" },
-  { name: "Mr.Wish", logo: "/logos/p25.webp" },
-  { name: "炒飯超人", logo: "/logos/p26.webp" },
-  { name: "芮可咖啡", logo: "/logos/p27.webp" },
-  { name: "裡好早午餐", logo: "/logos/p28.webp" },
-  { name: "簡簡JianJian健康餐盒", logo: "/logos/p29.webp" },
-  { name: "Le Walthert 瑞士乾酪", logo: "/logos/p30.webp" },
-  { name: "自慢嗑旅", logo: "/logos/p31.webp" },
-  { name: "叁時叁便當", logo: "/logos/p32.webp" },
-  { name: "無限好油飯", logo: "" },
-  { name: "發居齋素食", logo: "" },
-  { name: "三分味牛肉麵", logo: "" },
-  { name: "意品香佛跳牆", logo: "" },
-  { name: "糊塗麵", logo: "" },
-  { name: "麻古", logo: "" },
+export interface Partner {
+  name: string;
+  logo?: string;
+  /** 自帶底色的圖直接填滿整格（cover），乾淨標誌置中留白（contain）。
+   *  這是整面牆看起來整齊的關鍵，不是縮放能解決的。 */
+  fit?: 'cover' | 'contain';
+}
+
+export interface PartnerCategory {
+  label: string;
+  icon: LucideIcon;
+  partners: Partner[];
+}
+
+export const PARTNER_CATEGORIES: PartnerCategory[] = [
+  {
+    label: '便當・飯食',
+    icon: Utensils,
+    partners: [
+      { name: '一粒麥子陳傳盛爌肉飯', logo: '/logos/p08.webp', fit: 'contain' },
+      { name: '鹿港洪爌肉飯', logo: '/logos/p18.webp', fit: 'cover' },
+      { name: '上舫港式燒臘', logo: '/logos/p15.webp', fit: 'contain' },
+      { name: '昇牛肉飯', logo: '/logos/p16.webp', fit: 'cover' },
+      { name: '本便當', logo: '/logos/p19.webp', fit: 'contain' },
+      { name: '叁時叁便當', logo: '/logos/p32.webp', fit: 'cover' },
+      { name: '炒飯超人', logo: '/logos/p26.webp', fit: 'cover' },
+      { name: '九菜盒子', logo: '/logos/p14.webp', fit: 'contain' },
+      { name: '自慢嗑旅', logo: '/logos/p31.webp', fit: 'cover' },
+      { name: '無限好油飯' },
+      { name: '意品香佛跳牆' },
+    ],
+  },
+  {
+    label: '麵食・湯品',
+    icon: Soup,
+    partners: [
+      { name: '湘春家鍋燒意麵', logo: '/logos/p01.webp', fit: 'cover' },
+      { name: '麵涼涼麵', logo: '/logos/p22.webp', fit: 'cover' },
+      { name: '澎發號小卷米粉', logo: '/logos/p24.webp', fit: 'contain' },
+      { name: '三分味牛肉麵' },
+      { name: '糊塗麵' },
+    ],
+  },
+  {
+    label: '健康餐盒',
+    icon: Salad,
+    partners: [
+      { name: '蛋白盒子', logo: '/logos/p07.webp', fit: 'contain' },
+      { name: '簡簡JianJian健康餐盒', logo: '/logos/p29.webp', fit: 'cover' },
+      { name: '隨主飡法式水煮', logo: '/logos/p12.webp', fit: 'contain' },
+      { name: '食見生活', logo: '/logos/p05.webp', fit: 'contain' },
+      { name: '日青優格', logo: '/logos/p23.webp', fit: 'contain' },
+      { name: '發居齋素食' },
+    ],
+  },
+  {
+    label: '異國・早午餐',
+    icon: Sandwich,
+    partners: [
+      { name: '8私廚小餐館', logo: '/logos/p04.webp', fit: 'cover' },
+      { name: 'OKKO義式小館', logo: '/logos/p10.webp', fit: 'cover' },
+      { name: '裡好早午餐', logo: '/logos/p28.webp', fit: 'cover' },
+      { name: '吐司男', logo: '/logos/p21.webp', fit: 'cover' },
+      { name: 'Le Walthert 瑞士乾酪', logo: '/logos/p30.webp', fit: 'cover' },
+      { name: '丰樂食堂', logo: '/logos/p02.webp', fit: 'contain' },
+    ],
+  },
+  {
+    label: '咖啡・手搖',
+    icon: CupSoda,
+    partners: [
+      { name: '迷客夏', logo: '/logos/p03.webp', fit: 'contain' },
+      { name: 'Mr.Wish', logo: '/logos/p25.webp', fit: 'cover' },
+      { name: '青序智茶', logo: '/logos/p06.webp', fit: 'cover' },
+      { name: "TEA'S原味", logo: '/logos/p09.webp', fit: 'cover' },
+      { name: '丘森茶室', logo: '/logos/p20.webp', fit: 'cover' },
+      { name: '耶濃搖滾豆漿', logo: '/logos/p17.webp', fit: 'contain' },
+      { name: 'WAYMAKER COFFEE', logo: '/logos/p11.webp', fit: 'cover' },
+      { name: 'Gatewell Coffee Roasters', logo: '/logos/p13.webp', fit: 'contain' },
+      { name: '芮可咖啡', logo: '/logos/p27.webp', fit: 'contain' },
+      { name: '麻古' },
+    ],
+  },
 ];
 
 export const COMPARISON_DATA = [

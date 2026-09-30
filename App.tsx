@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import BuildingSelection from './components/BuildingSelection';
 import DeliveryShowcase from './components/DeliveryShowcase';
 import BuildingIntake from './components/BuildingIntake';
+import RoleCards from './components/RoleCards';
 import type { Page } from './types';
 
 const PAGE_PATHS: Record<Page, string> = {
@@ -49,6 +50,7 @@ const App: React.FC = () => {
             <Comparison />
             <HowItWorks onNavigate={navigate} />
             <DeliveryShowcase />
+            <RoleCards onNavigate={navigate} />
             <Partners />
             <Footer onNavigate={navigate} />
           </>

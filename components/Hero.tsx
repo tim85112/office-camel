@@ -8,7 +8,7 @@ interface HeroProps {
 }
 
 const STATS = [
-  { value: '1 人', label: '就能點，不用揪團' },
+  { value: '1,500+', label: '位商辦會員在用' },
   { value: '$0', label: '運費・低消・平台費' },
   { value: '50+ 家', label: '合作餐廳，天天換菜單' },
 ];

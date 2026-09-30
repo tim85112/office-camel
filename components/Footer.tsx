@@ -16,8 +16,11 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           {/* Brand Info */}
           <div>
             <div className="flex items-center mb-4">
-              <span className="text-2xl font-bold text-white tracking-tight">商辦駝獸</span>
-              <span className="ml-2 text-xs bg-brand-red px-2 py-0.5 rounded text-white font-medium">Office Camel</span>
+              <img src="/icon-192.png" width="192" height="192" alt="" className="h-10 w-10 rounded-full" />
+              <span className="ml-3 flex flex-col leading-none">
+                <span className="text-xl font-bold text-white tracking-tight">商辦駝獸</span>
+                <span className="mt-1 text-[10px] font-semibold tracking-[0.18em] text-gray-500">OFFICE CAMEL</span>
+              </span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               專注於商辦大樓的午餐合單平台。<br />

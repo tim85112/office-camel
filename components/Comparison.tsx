@@ -27,7 +27,7 @@ const Comparison: React.FC = () => {
                   <span className="text-lg font-bold text-gray-500">傳統外送平台</span>
                 </div>
                 <div className="relative flex items-center justify-center gap-2 overflow-hidden bg-brand-red px-6 py-5">
-                  <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-[.is-shown]:animate-sheen motion-reduce:hidden"></span>
+                  <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 bg-gradient-to-r from-transparent via-white/75 to-transparent opacity-0 group-[.is-shown]:animate-sheen motion-reduce:hidden"></span>
                   <Check className="relative h-5 w-5 text-white" />
                   <span className="relative text-lg font-extrabold text-white">商辦駝獸</span>
                 </div>
@@ -63,11 +63,14 @@ const Comparison: React.FC = () => {
                       <p className="mb-1 text-xs text-gray-400">傳統外送平台</p>
                       <p className="text-sm text-gray-400">{item.traditional}</p>
                     </div>
-                    <div className="relative overflow-hidden rounded-xl bg-white p-3 shadow-md ring-2 ring-brand-red/35">
+                    <div
+                      style={{ animationDelay: `${idx * 180}ms` }}
+                      className="relative overflow-hidden rounded-xl bg-white p-3 shadow-md ring-2 ring-brand-red/35 group-[.is-shown]:animate-glow motion-reduce:animate-none"
+                    >
                       <span
                         aria-hidden="true"
                         style={{ animationDelay: `${idx * 140}ms` }}
-                        className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-brand-red/20 to-transparent opacity-0 group-[.is-shown]:animate-sheen motion-reduce:hidden"
+                        className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 bg-gradient-to-r from-transparent via-brand-red/30 to-transparent opacity-0 group-[.is-shown]:animate-sheen motion-reduce:hidden"
                       ></span>
                       <p className="relative mb-1 flex items-center gap-1 text-xs font-bold text-brand-red"><Check className="h-3 w-3" />商辦駝獸</p>
                       <p className="relative text-sm font-bold text-gray-900">{item.beast}</p>

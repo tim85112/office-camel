@@ -24,7 +24,6 @@ const Partners: React.FC = () => {
                     <category.icon className="h-4 w-4 text-brand-red" />
                   </span>
                   <h3 className="text-lg font-bold text-gray-900">{category.label}</h3>
-                  <span className="text-sm text-gray-500">{category.partners.length}</span>
                 </div>
 
                 <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">

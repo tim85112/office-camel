@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, MessageCircle, Star } from 'lucide-react';
+import { MessageCircle, Star } from 'lucide-react';
 import { TESTIMONIALS, type Testimonial } from '../constants';
 import Reveal from './Reveal';
 
@@ -36,17 +36,13 @@ const Card: React.FC<{ item: Testimonial; duplicate: boolean }> = ({ item, dupli
     aria-hidden={duplicate || undefined}
     className="flex h-full w-[300px] flex-shrink-0 flex-col rounded-2xl bg-gray-50 p-6 ring-1 ring-gray-100 transition-all duration-300 hover:bg-white hover:shadow-md hover:ring-brand-yellow/60 sm:w-[340px]"
   >
+    {/* 圓圈本身就是出處標記：這則來自 LINE 官方帳號。一個圖示、一行字。
+        之後拿到各棟的取餐現場照，就把這顆換成那棟的照片。 */}
     <div className="mb-4 flex items-center gap-3">
-      <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-brand-beige/60 ring-1 ring-brand-yellow/40">
-        <Building2 className="h-5 w-5 text-brand-red" />
+      <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#06C755]/10 ring-1 ring-[#06C755]/25">
+        <MessageCircle className="h-5 w-5 text-[#06C755]" />
       </span>
-      <div className="min-w-0">
-        <p className="truncate text-sm font-bold text-gray-900">來自 {item.source}</p>
-        <p className="flex items-center gap-1 text-xs text-gray-500">
-          <MessageCircle className="h-3 w-3 text-[#06C755]" />
-          官方帳號訊息
-        </p>
-      </div>
+      <p className="min-w-0 truncate text-sm font-bold text-gray-900">來自 {item.source}</p>
     </div>
 
     <div aria-hidden="true" className="mb-3 flex gap-0.5">
@@ -69,8 +65,7 @@ const Testimonials: React.FC = () => {
         <Reveal>
           <div className="mb-12 text-center md:mb-14">
             <p className="mb-3 text-xs font-bold tracking-[0.2em] text-brand-red">REAL MESSAGES</p>
-            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">會員在 LINE 上跟我們說的話</h2>
-            <p className="text-gray-600">以下都是會員主動傳進官方帳號的訊息，逐字照登、沒有潤稿。</p>
+            <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">原話照登，一個字沒改</h2>
           </div>
         </Reveal>
 
@@ -94,8 +89,6 @@ const Testimonials: React.FC = () => {
             </ul>
           </div>
         </Reveal>
-
-        <p className="mt-6 text-center text-sm text-gray-400">滑鼠移上去會暫停，方便讀完</p>
       </div>
     </section>
   );

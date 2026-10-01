@@ -2,6 +2,9 @@ import { Utensils, Soup, Salad, Sandwich, CupSoda, Truck, DollarSign, Clock, Shi
 import type { LucideIcon } from 'lucide-react';
 
 export const LINKS = {
+  /** ⚠️ 這是「個人點餐・順天經貿廣場」那一支 OA（@215mzebv），不是通用的消費端入口。
+   *  別棟的人點進去會加到錯的帳號、也不會收到自己那棟的菜單。
+   *  任何給消費者的 CTA 一律導到 /buildings 讓他自己選棟，不要用這條。 */
   consumerLine: "https://lin.ee/CAkrvvv",
   restaurantLine: "https://lin.ee/W9liNZZ",
   logisticsLine: "https://lin.ee/MrkTwKS",

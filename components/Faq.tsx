@@ -1,13 +1,15 @@
 import React from 'react';
 import { ArrowLeft, ChevronDown } from 'lucide-react';
 import { FAQ_CATEGORIES, LINKS, REPLY_SLA } from '../constants';
+import type { Page } from '../types';
 import Reveal from './Reveal';
 
 interface FaqProps {
   onBack: () => void;
+  onNavigate: (page: Page) => void;
 }
 
-const Faq: React.FC<FaqProps> = ({ onBack }) => {
+const Faq: React.FC<FaqProps> = ({ onBack, onNavigate }) => {
   return (
     <div className="min-h-screen bg-brand-beige/20 pt-24 pb-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -27,15 +29,15 @@ const Faq: React.FC<FaqProps> = ({ onBack }) => {
               <span className="text-brand-red">這裡都有答案</span>
             </h1>
             <p className="mt-5 text-gray-600">
-              找不到答案？直接{' '}
-              <a
-                href={LINKS.consumerLine}
-                target="_blank"
-                rel="noopener noreferrer"
+              找不到答案？到{' '}
+              <button
+                type="button"
+                onClick={() => onNavigate('buildingSelection')}
                 className="font-bold text-brand-red underline decoration-brand-yellow decoration-2 underline-offset-4 hover:text-red-700"
               >
-                加 LINE 問我們
-              </a>
+                你的大樓 LINE
+              </button>{' '}
+              問我們
               ，{REPLY_SLA}內回覆。
             </p>
           </header>
@@ -83,14 +85,13 @@ const Faq: React.FC<FaqProps> = ({ onBack }) => {
             <h2 className="text-2xl font-bold text-white md:text-3xl">還沒解決？找人問最快</h2>
             <p className="mt-3 text-gray-400">挑一個跟你身分相符的入口，{REPLY_SLA}內會有人回你。</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <a
-                href={LINKS.consumerLine}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => onNavigate('buildingSelection')}
                 className="rounded-lg bg-brand-yellow px-6 py-3 font-bold text-brand-dark shadow-lg transition-colors hover:bg-yellow-400"
               >
                 我要訂餐
-              </a>
+              </button>
               <a
                 href={LINKS.restaurantLine}
                 target="_blank"

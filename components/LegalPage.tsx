@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowLeft, Mail, MessageCircle, Phone } from 'lucide-react';
-import { CONTACTS, LEGAL_ENTITY, LINKS, type LegalDoc } from '../constants';
+import { ArrowLeft, Mail, Phone } from 'lucide-react';
+import { CONTACTS, LEGAL_ENTITY, type LegalDoc } from '../constants';
 
 interface LegalPageProps {
   doc: LegalDoc;
@@ -71,15 +71,6 @@ const LegalPage: React.FC<LegalPageProps> = ({ doc, onBack }) => {
               >
                 <Mail className="h-4 w-4 text-brand-red" />
                 {LEGAL_ENTITY.email}
-              </a>
-              <a
-                href={LINKS.consumerLine}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 font-semibold text-brand-dark hover:text-brand-red"
-              >
-                <MessageCircle className="h-4 w-4 text-[#06C755]" />
-                商辦駝獸 LINE 官方帳號
               </a>
               {CONTACTS.map((contact) => (
                 <a

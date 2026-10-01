@@ -106,7 +106,7 @@ const App: React.FC = () => {
         ) : currentPage === 'buildingIntake' ? (
           <BuildingIntake onBack={backHome} onNavigate={navigate} />
         ) : currentPage === 'faq' ? (
-          <Faq onBack={backHome} />
+          <Faq onBack={backHome} onNavigate={navigate} />
         ) : currentPage === 'privacy' ? (
           <LegalPage doc={PRIVACY_DOC} onBack={backHome} />
         ) : currentPage === 'terms' ? (

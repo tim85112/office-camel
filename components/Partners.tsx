@@ -6,6 +6,17 @@ import Reveal from './Reveal';
 const SPEED_PX_PER_SEC = 34;
 /** 一格的寬 + 間距，要跟下面 className 的 w-28/gap-3 對得上 */
 const TILE_PITCH = 112 + 12;
+/** 容器最寬就是 max-w-6xl 的 1152px。一排的內容若沒超過它，
+ *  用來接回原點的那份複製品會跟本尊同時出現在畫面上 —— 就會看到同一家店出現兩次。
+ *  1152 / 124 ≈ 9.3，所以一排至少要 10 家。分類直接當排用會有三類不夠，因此改成混排。 */
+const ROWS = 3;
+
+const ALL: Partner[] = PARTNER_CATEGORIES.flatMap((c) => c.partners);
+
+/** 輪流發牌，讓每一排都混到各種類型，不會整排都是飲料店 */
+const ROW_ITEMS: Partner[][] = Array.from({ length: ROWS }, (_, r) =>
+  ALL.filter((_, i) => i % ROWS === r),
+);
 
 const Tile: React.FC<{ partner: Partner; duplicate: boolean }> = ({ partner, duplicate }) => (
   <div
@@ -41,50 +52,57 @@ const Partners: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <Reveal>
-          <div className="mb-12 text-center md:mb-14">
+          <div className="mb-10 text-center">
             <p className="mb-3 text-xs font-bold tracking-[0.2em] text-brand-red">BRAND WALL</p>
             <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">精選合作夥伴</h2>
             <p className="text-lg text-gray-600">從巷弄小店到連鎖品牌，50 家以上台中餐廳，每天換菜單。</p>
           </div>
         </Reveal>
 
-        <div className="space-y-8">
-          {PARTNER_CATEGORIES.map((category, idx) => {
-            const duration = (category.partners.length * TILE_PITCH) / SPEED_PX_PER_SEC;
-            return (
-              <Reveal key={category.label} delay={idx * 70}>
-                <div>
-                  <div className="mb-4 flex items-center gap-2.5">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-gray-100">
-                      <category.icon className="h-4 w-4 text-brand-red" />
-                    </span>
-                    <h3 className="text-lg font-bold text-gray-900">{category.label}</h3>
-                    <span className="text-sm text-gray-500">{category.partners.length}</span>
-                  </div>
+        {/* 分類改成一條摘要列 —— 排數由「要幾家才不會看到重複」決定，不由分類決定 */}
+        <Reveal delay={60}>
+          <ul className="mb-8 flex flex-wrap items-center justify-center gap-2.5">
+            {PARTNER_CATEGORIES.map((category) => (
+              <li
+                key={category.label}
+                className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-brand-dark shadow-sm ring-1 ring-gray-100"
+              >
+                <category.icon className="h-4 w-4 text-brand-red" />
+                {category.label}
+                <span className="text-gray-400">{category.partners.length}</span>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
 
-                  {/*
-                    跑馬燈。左右用 mask 淡出，不用漸層色塊蓋 —— 這樣不必跟區塊底色對齊。
-                    關掉動畫偏好時改成可以自己橫向捲，不會有人看不到後半排。
-                  */}
-                  <div
-                    className="group/row relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_4%,#000_96%,transparent)] motion-reduce:overflow-x-auto motion-reduce:[mask-image:none]"
+        <div className="space-y-3">
+          {ROW_ITEMS.map((items, idx) => {
+            const duration = (items.length * TILE_PITCH) / SPEED_PX_PER_SEC;
+            return (
+              <Reveal key={idx} delay={idx * 80}>
+                {/*
+                  左右用 mask 淡出，不用漸層色塊蓋 —— 這樣不必跟區塊底色對齊。
+                  關掉動畫偏好時改成可以自己橫向捲，不會有人看不到後半排。
+                */}
+                <div className="group/row relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_4%,#000_96%,transparent)] motion-reduce:overflow-x-auto motion-reduce:[mask-image:none]">
+                  <ul
+                    style={{
+                      animationDuration: `${duration}s`,
+                      animationDirection: idx % 2 ? 'reverse' : 'normal',
+                    }}
+                    className="flex w-max gap-3 animate-marquee group-hover/row:[animation-play-state:paused] motion-reduce:animate-none"
                   >
-                    <ul
-                      style={{ animationDuration: `${duration}s`, animationDirection: idx % 2 ? 'reverse' : 'normal' }}
-                      className="flex w-max gap-3 animate-marquee [animation-play-state:running] group-hover/row:[animation-play-state:paused] motion-reduce:animate-none"
-                    >
-                      {category.partners.map((partner) => (
-                        <li key={partner.name}>
-                          <Tile partner={partner} duplicate={false} />
-                        </li>
-                      ))}
-                      {category.partners.map((partner) => (
-                        <li key={partner.name + '-dup'}>
-                          <Tile partner={partner} duplicate />
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    {items.map((partner) => (
+                      <li key={partner.name}>
+                        <Tile partner={partner} duplicate={false} />
+                      </li>
+                    ))}
+                    {items.map((partner) => (
+                      <li key={partner.name + '-dup'}>
+                        <Tile partner={partner} duplicate />
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </Reveal>
             );

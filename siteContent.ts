@@ -19,31 +19,35 @@ export interface Testimonial {
   /** 署名到「大樓・會員」為止。他們是寫給客服的，不是寫給官網的，
    *  放 LINE 暱稱或頭像就變成未經同意的個資揭露。 */
   source: string;
-  /** 整排放大顯示 */
-  feature?: boolean;
+  /** 卡片上要反白的那一句，必須是 quote 的子字串；對不上就整段照常顯示 */
+  highlight?: string;
 }
 
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote: '有人離職後再找工作，一樣找順天大樓，就是奔著駝獸中午吃飯飲料免煩惱。',
     source: '順天經貿廣場・會員',
-    feature: true,
+    highlight: '一樣找順天大樓',
   },
   {
     quote: '謝謝～～你們對單人訂餐真的很友善～～感恩',
     source: '順天經貿廣場・會員',
+    highlight: '對單人訂餐真的很友善',
   },
   {
     quote: '美食沙漠需要駝獸，希望駝獸賺大錢。',
     source: '商辦駝獸會員',
+    highlight: '美食沙漠需要駝獸',
   },
   {
     quote: '希望你們生意可以做很久～造福我們不多人訂餐的公司。',
     source: '商辦駝獸會員',
+    highlight: '造福我們不多人訂餐的公司',
   },
   {
     quote: '感謝你們提供的服務，最近跟同事聊天才知道有這個平台。',
     source: '商辦駝獸會員',
+    highlight: '跟同事聊天才知道有這個平台',
   },
 ];
 

@@ -36,17 +36,17 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote: '美食沙漠需要駝獸，希望駝獸賺大錢。',
-    source: '七期商辦・會員',
+    source: '中國信託市政分行・會員',
     highlight: '美食沙漠需要駝獸',
   },
   {
     quote: '希望你們生意可以做很久～造福我們不多人訂餐的公司。',
-    source: '七期商辦・會員',
+    source: '凱基人壽市政大樓・會員',
     highlight: '造福我們不多人訂餐的公司',
   },
   {
     quote: '感謝你們提供的服務，最近跟同事聊天才知道有這個平台。',
-    source: '七期商辦・會員',
+    source: '凱基人壽市政大樓・會員',
     highlight: '跟同事聊天才知道有這個平台',
   },
 ];

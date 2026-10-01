@@ -65,7 +65,7 @@ const Testimonials: React.FC = () => {
         <Reveal>
           <div className="mb-12 text-center md:mb-14">
             <p className="mb-3 text-xs font-bold tracking-[0.2em] text-brand-red">REAL MESSAGES</p>
-            <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">原話照登，一個字沒改</h2>
+            <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">1,500 位商辦會員見證！</h2>
           </div>
         </Reveal>
 

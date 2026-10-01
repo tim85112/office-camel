@@ -10,7 +10,7 @@ interface HeroProps {
 const STATS = [
   { value: '1,500+', label: '位商辦會員在用' },
   { value: '$0', label: '運費・低消・平台費' },
-  { value: '50+ 家', label: '合作餐廳，天天換菜單' },
+  { value: '50+', label: '合作餐廳，天天換菜單' },
 ];
 
 const chipClass =

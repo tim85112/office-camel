@@ -39,8 +39,8 @@ const Card: React.FC<{ item: Testimonial; duplicate: boolean }> = ({ item, dupli
     {/* 圓圈本身就是出處標記：這則來自 LINE 官方帳號。一個圖示、一行字。
         之後拿到各棟的取餐現場照，就把這顆換成那棟的照片。 */}
     <div className="mb-4 flex items-center gap-3">
-      <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#06C755]/10 ring-1 ring-[#06C755]/25">
-        <MessageCircle className="h-5 w-5 text-[#06C755]" />
+      <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-[#06C755] shadow-sm">
+        <MessageCircle className="h-[22px] w-[22px] fill-white text-white" />
       </span>
       <p className="min-w-0 truncate text-sm font-bold text-gray-900">來自 {item.source}</p>
     </div>

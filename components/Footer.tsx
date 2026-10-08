@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MessageCircle, Mail } from 'lucide-react';
+import { MessageCircle, Mail } from 'lucide-react';
 import { CONTACTS, LEGAL_ENTITY, LINKS } from '../constants';
 import type { Page } from '../types';
 
@@ -76,12 +76,6 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                       <p className="text-sm text-gray-400">合作聯繫專員</p>
                       <p className="text-white font-medium">{contact.name}</p>
                     </div>
-                  </div>
-                  <div className="flex items-center">
-                    <Phone className="w-5 h-5 text-brand-red mr-3" />
-                    <a href={`tel:${contact.phone.replace('-', '')}`} className="text-white hover:text-brand-yellow transition-colors">
-                      {contact.phone}
-                    </a>
                   </div>
                   {contact.line && (
                     <div className="flex items-center">

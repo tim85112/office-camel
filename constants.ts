@@ -15,13 +15,11 @@ export const LINKS = {
 export const CONTACTS = [
   {
     name: "Ivan Lee",
-    phone: "0938-089609",
-    line: "https://line.me/ti/p/DyoGGgwKTv"
+    line: "https://lin.ee/UFk1pqQ"
   },
   {
     name: "Chiu",
-    phone: "0978-521989",
-    line: "https://line.me/ti/p/UInmpX-4TS"
+    line: "https://lin.ee/UFk1pqQ"
   }
 ];
 

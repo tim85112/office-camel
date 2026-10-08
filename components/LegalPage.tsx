@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, Mail, Phone } from 'lucide-react';
+import { ArrowLeft, Mail, MessageCircle } from 'lucide-react';
 import { CONTACTS, LEGAL_ENTITY, type LegalDoc } from '../constants';
 
 interface LegalPageProps {
@@ -74,12 +74,14 @@ const LegalPage: React.FC<LegalPageProps> = ({ doc, onBack }) => {
               </a>
               {CONTACTS.map((contact) => (
                 <a
-                  key={contact.phone}
-                  href={`tel:${contact.phone.replace(/-/g, '')}`}
+                  key={contact.name}
+                  href={contact.line}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center gap-2.5 font-semibold text-brand-dark hover:text-brand-red"
                 >
-                  <Phone className="h-4 w-4 text-brand-red" />
-                  {contact.name}　{contact.phone}
+                  <MessageCircle className="h-4 w-4 text-brand-red" />
+                  {contact.name}　加 LINE 好友
                 </a>
               ))}
             </div>

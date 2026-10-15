@@ -160,7 +160,7 @@ export const BUILDINGS: Record<District, Building[]> = {
         { name: '中國信託銀行－市政分行', status: 'opened', lineUrl: 'https://lin.ee/NeUeKvn', note: '近期正式啟用' },
         { name: '誠品生活480', status: 'opened', lineUrl: 'https://lin.ee/w4bJSYj', note: '近期正式啟用' },
         { name: '親家T3大樓', status: 'opened', lineUrl: 'https://lin.ee/9HEVDrv', note: '近期正式啟用' },
-        { name: '興富發鼎盛 BHW', slug: 'hfh-dingsheng-bhw', status: 'developing' },
+        { name: '興富發鼎盛 BHW', slug: 'hfh-dingsheng-bhw', status: 'opened', lineUrl: 'https://lin.ee/NaFZZPc', note: '近期正式啟用' },
         { name: 'W 國際商務中心－七期旗艦館', slug: 'w-international-qiqi', status: 'developing' },
         { name: 'NTC 國家商貿中心', slug: 'ntc-national-trade', status: 'developing' },
         { name: 'CBD 時代廣場', slug: 'cbd-times-square', status: 'developing' },

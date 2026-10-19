@@ -56,6 +56,7 @@ export const PARTNER_CATEGORIES: PartnerCategory[] = [
       { name: '健宏飯担', logo: '/logos/p47.webp', fit: 'contain' },
       { name: '滿添下台蔬自助餐', logo: '/logos/p46.webp', fit: 'contain' },
       { name: '老王咖哩', logo: '/logos/p44.webp', fit: 'contain' },
+      { name: '好肉燥', logo: '/logos/p51.webp', fit: 'cover' },
       { name: '無限好油飯' },
       { name: '意品香佛跳牆' },
     ],
@@ -85,6 +86,7 @@ export const PARTNER_CATEGORIES: PartnerCategory[] = [
       { name: '輕禾食堂', logo: '/logos/p38.webp', fit: 'cover' },
       { name: '食不香瞞', logo: '/logos/p42.webp', fit: 'contain' },
       { name: '彩碗', logo: '/logos/p48.webp', fit: 'cover' },
+      { name: '禾岩手作餐盒', logo: '/logos/p50.webp', fit: 'contain' },
       { name: '發居齋素食' },
     ],
   },
@@ -103,6 +105,7 @@ export const PARTNER_CATEGORIES: PartnerCategory[] = [
       { name: '自然捲', logo: '/logos/p35.webp', fit: 'contain' },
       { name: '塔諾廚房', logo: '/logos/p41.webp', fit: 'contain' },
       { name: '辛巴韓式鐵板蓋飯', logo: '/logos/p40.webp', fit: 'cover' },
+      { name: '奇化加韓國料理', logo: '/logos/p52.webp', fit: 'cover' },
     ],
   },
   {

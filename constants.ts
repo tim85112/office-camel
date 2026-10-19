@@ -87,6 +87,7 @@ export const PARTNER_CATEGORIES: PartnerCategory[] = [
       { name: '食不香瞞', logo: '/logos/p42.webp', fit: 'contain' },
       { name: '彩碗', logo: '/logos/p48.webp', fit: 'cover' },
       { name: '禾岩手作餐盒', logo: '/logos/p50.webp', fit: 'contain' },
+      { name: '小鯊鯊健康餐', logo: '/logos/p53.webp', fit: 'contain' },
       { name: '發居齋素食' },
     ],
   },

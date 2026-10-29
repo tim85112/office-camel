@@ -42,6 +42,7 @@ export const PARTNER_CATEGORIES: PartnerCategory[] = [
     label: '便當・飯食',
     icon: Utensils,
     partners: [
+      { name: '上野烤肉飯', logo: '/logos/p54.webp', fit: 'contain' },
       { name: '一粒麥子陳傳盛爌肉飯', logo: '/logos/p08.webp', fit: 'contain' },
       { name: '鹿港洪爌肉飯', logo: '/logos/p18.webp', fit: 'cover' },
       { name: '上舫港式燒臘', logo: '/logos/p15.webp', fit: 'contain' },

@@ -89,6 +89,8 @@ export const PARTNER_CATEGORIES: PartnerCategory[] = [
       { name: '彩碗', logo: '/logos/p48.webp', fit: 'cover' },
       { name: '禾岩手作餐盒', logo: '/logos/p50.webp', fit: 'contain' },
       { name: '小鯊鯊健康餐', logo: '/logos/p53.webp', fit: 'contain' },
+      { name: '蔬享健康餐盒', logo: '/logos/p55.webp', fit: 'cover' },
+      { name: '青食光輕食沙拉', logo: '/logos/p56.webp', fit: 'cover' },
       { name: '發居齋素食' },
     ],
   },

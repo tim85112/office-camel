@@ -2,15 +2,17 @@ import React from 'react';
 import { ArrowRight, Building2, Store, Truck } from 'lucide-react';
 import { LINKS } from '../constants';
 import type { Page } from '../types';
+import RisingArrow from './RisingArrow';
 
 interface HeroProps {
   onNavigate: (page: Page) => void;
 }
 
-const STATS = [
-  { value: '1,500+', label: '位商辦會員在用' },
+/** rising：數字後面接攀升箭頭（取代原本的「+」），螢幕報讀改念「以上」 */
+const STATS: { value: string; label: string; rising?: boolean }[] = [
+  { value: '2,000', label: '位商辦會員在用', rising: true },
   { value: '$0', label: '運費・低消・平台費' },
-  { value: '50+', label: '合作餐廳，天天換菜單' },
+  { value: '60', label: '合作餐廳，天天換菜單', rising: true },
 ];
 
 const chipClass =
@@ -93,9 +95,17 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
 
         {/* Proof strip */}
         <dl className="mt-12 grid grid-cols-1 sm:grid-cols-3 rounded-2xl bg-white shadow-lg ring-1 ring-black/5 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
-          {STATS.map((stat) => (
+          {STATS.map((stat, idx) => (
             <div key={stat.label} className="px-6 py-5 sm:py-6 text-center">
-              <dt className="text-3xl font-extrabold text-brand-red">{stat.value}</dt>
+              <dt className="flex items-center justify-center text-3xl font-extrabold text-brand-red">
+                {stat.value}
+                {stat.rising && (
+                  <>
+                    <span className="sr-only">以上</span>
+                    <RisingArrow delayMs={idx * 350} />
+                  </>
+                )}
+              </dt>
               <dd className="mt-1 text-sm text-gray-600">{stat.label}</dd>
             </div>
           ))}

@@ -52,12 +52,19 @@ export default {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
+        // 攀升箭頭：前段停住讓人看清楚，後段加速往上衝、下一顆接上。
+        // 推 -50% 剛好換成直排的第二顆（跟跑馬燈同一招），所以看不出循環接縫。
+        climb: {
+          '0%, 22%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(-50%)' },
+        },
       },
       animation: {
         /* 秒數在元件用 inline style 覆寫，讓每一排的 px/秒 一致 */
         marquee: 'marquee 40s linear infinite',
         sheen: 'sheen 3.2s ease-out infinite',
         glow: 'glow 2.6s ease-in-out infinite',
+        climb: 'climb 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite',
       },
     },
   },

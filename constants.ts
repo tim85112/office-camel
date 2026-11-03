@@ -58,6 +58,7 @@ export const PARTNER_CATEGORIES: PartnerCategory[] = [
       { name: '滿添下台蔬自助餐', logo: '/logos/p46.webp', fit: 'contain' },
       { name: '老王咖哩', logo: '/logos/p44.webp', fit: 'contain' },
       { name: '好肉燥', logo: '/logos/p51.webp', fit: 'cover' },
+      { name: '日嚐好食', logo: '/logos/p57.webp', fit: 'contain' },
       { name: '無限好油飯' },
       { name: '意品香佛跳牆' },
     ],

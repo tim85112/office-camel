@@ -66,8 +66,6 @@ const BuildingIntake: React.FC<BuildingIntakeProps> = ({ onBack, onNavigate }) =
               </Reveal>
             ))}
           </div>
-
-          <p className="mt-6 text-sm text-gray-600">大樓還沒開通也能談 —— 我們會先評估配送路線，再跟你說可不可行。</p>
         </div>
       </section>
 

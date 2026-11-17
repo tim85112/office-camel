@@ -304,7 +304,6 @@ const ConsultForm: React.FC<ConsultFormProps> = ({ plan, onNavigate }) => {
                 <h3 className="mt-2 text-xl font-bold leading-snug tracking-[-0.02em] text-brand-ink md:text-2xl">
                   1 分鐘填完，{REPLY_SLA}內專人聯絡你
                 </h3>
-                <p className="mt-2 text-sm text-gray-700">四個小段落，大部分用點的</p>
               </div>
 
               <SectionLabel first>① 公司與大樓</SectionLabel>

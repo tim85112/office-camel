@@ -24,8 +24,8 @@ export interface BusinessPlan {
   name: string;
   /** 卡片左上角的小字 */
   eyebrow: string;
-  /** 價格 NT$0 後面那行小字 */
-  priceNote: string;
+  /** 價格 NT$0 後面那行小字（沒有就不顯示） */
+  priceNote?: string;
   /** 價格下面那一行，用「 · 」串起來 */
   terms: string[];
   points: string[];
@@ -39,13 +39,11 @@ export const BUSINESS_PLANS: BusinessPlan[] = [
     id: 'company',
     name: '公司方案',
     eyebrow: 'Company Plan',
-    priceNote: '公司不用編預算',
     terms: ['適合行政・人資・福委', '同事自己點、自己付'],
     points: [
       '一個人就能點，不用湊人數、沒有低消',
       '想一起訂就開團，開團另有優惠級距',
       '線上付款，行政不用收錢、找零、對帳',
-      '餐點瑕疵、漏送由我們先處理與補償',
     ],
   },
   {
@@ -57,8 +55,8 @@ export const BUSINESS_PLANS: BusinessPlan[] = [
     points: [
       '1F 一張桌子當取餐處，不裝設備、不留東西過夜',
       '配送夥伴送到、依取餐碼分好袋，管理處不用出人力',
-      '開通大樓專屬 LINE 官方帳號，附現場說明物',
-      '每天固定時段送達，時間開通前跟你一起確認',
+      '開通大樓專屬 LINE 官方帳號',
+      '每天固定時段送達',
     ],
     featured: { badge: '推薦整棟開通' },
   },

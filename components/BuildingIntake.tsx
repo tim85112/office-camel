@@ -54,11 +54,8 @@ const BuildingIntake: React.FC<BuildingIntakeProps> = ({ onBack, onNavigate }) =
 
           <p className="text-xs font-bold tracking-[0.22em] text-brand-ink">合作方案・TWO WAYS TO START</p>
           <h1 className="mt-3 text-[26px] font-bold leading-tight tracking-[-0.02em] text-brand-ink md:text-4xl lg:text-[44px]">
-            兩種開法，導入費都是 $0
+            2 種方案，$0 免費導入
           </h1>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-gray-700 md:mt-5 md:text-lg">
-            整棟管理處或單一公司都適用。我們自己送、自己分袋，你只要告訴我們大樓在哪。
-          </p>
 
           <div className="mt-10 grid gap-4 md:mt-14 md:grid-cols-2 md:gap-6">
             {BUSINESS_PLANS.map((p, idx) => (
@@ -175,7 +172,9 @@ function PlanCard({ plan, onPick }: { plan: BusinessPlan; onPick: (name: string)
 
         <p className="mt-4 flex flex-wrap items-end gap-x-2 gap-y-1 md:mt-5">
           <span className={`text-4xl font-bold leading-none md:text-5xl ${dark ? 'text-brand-red-light' : 'text-brand-red'}`}>NT$0</span>
-          <span className={`text-sm ${dark ? 'text-brand-cream/75' : 'text-gray-600'}`}>{plan.priceNote}</span>
+          {plan.priceNote && (
+            <span className={`text-sm ${dark ? 'text-brand-cream/75' : 'text-gray-600'}`}>{plan.priceNote}</span>
+          )}
         </p>
         <p className={`mt-3 text-sm ${dark ? 'text-brand-cream/75' : 'text-gray-600'}`}>{plan.terms.join(' · ')}</p>
 

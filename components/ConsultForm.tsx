@@ -227,9 +227,9 @@ const ConsultForm: React.FC<ConsultFormProps> = ({ plan, onNavigate }) => {
 
           <ul className="mt-9 space-y-4">
             {[
-              `免費諮詢 · 不會當場要你簽約`,
-              `${REPLY_SLA}內回覆 · 先幫你看大樓在不在路線上`,
-              `已有 ${OPENED_COUNT} 棟商辦 · 每天中午都在送`,
+              '免費諮詢，專人一對一說明',
+              `${REPLY_SLA}內，專人主動聯繫`,
+              `已進駐 ${OPENED_COUNT} 棟商辦，天天中午送達`,
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-brand-cream/95">
                 <ShieldCheck className="mt-[3px] h-[18px] w-[18px] flex-shrink-0 text-brand-yellow" />

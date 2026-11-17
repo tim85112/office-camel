@@ -35,9 +35,9 @@ export const ROUTES: Record<Page, RouteMeta> = {
   },
   buildingIntake: {
     path: '/apply',
-    title: '公司合作申請｜商辦駝獸',
+    title: '公司合作方案｜商辦駝獸',
     description:
-      '想在自己的大樓開一個午餐入口？零導入費用、不佔大樓空間、不需要出人力。填表後兩個工作日內專人聯繫。',
+      '大樓方案、公司方案，導入費與月費都是 0 元，不佔大樓空間、不需要出人力。1 分鐘填完預約諮詢，兩個工作日內專人聯繫。',
     priority: 0.8,
   },
   faq: {

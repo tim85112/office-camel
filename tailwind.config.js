@@ -18,6 +18,16 @@ export default {
           yellow: '#fdc939',
           beige: '#fde8c8',
           dark: '#2d2d2d',
+          // /apply（公司合作方案）用的延伸色。版型學初茶，顏色一律走自己的紅黃咖啡。
+          'red-mid': '#d4542f', // 漸層亮端
+          'red-deep': '#a63519', // 漸層暗端、錯誤字
+          'red-light': '#f08561', // 深咖啡底上的價格與勾勾（品牌紅在深底對比不夠）
+          cream: '#fffaf3', // 表單卡
+          sand: '#f8f3ec', // 方案區底
+          line: '#e7ddd1', // 卡片與輸入框細框
+          ink: '#2a1c15', // 深咖啡：標題字、精選卡、諮詢區底
+          'ink-soft': '#5b3b2b',
+          'ink-deep': '#1b110c',
         },
       },
       fontFamily: {

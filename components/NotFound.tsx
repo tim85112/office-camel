@@ -9,7 +9,7 @@ interface NotFoundProps {
 const LINKS: { page: Page; label: string; desc: string }[] = [
   { page: 'buildingSelection', label: '查看大樓', desc: '看看你的辦公大樓開通了沒' },
   { page: 'faq', label: '常見問題', desc: '訂餐、導入、合作，四大類 25 題' },
-  { page: 'buildingIntake', label: '公司合作申請', desc: '想在自己的大樓開午餐入口' },
+  { page: 'buildingIntake', label: '公司合作方案', desc: '想在自己的大樓開午餐入口' },
 ];
 
 const NotFound: React.FC<NotFoundProps> = ({ onNavigate }) => {
